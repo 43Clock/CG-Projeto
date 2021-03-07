@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/clock/Aulas/CG/Projeto/Generator/box.h
+../Structs/Forma.h
+/home/clock/Aulas/CG/Projeto/Structs/Forma.h
+
+/home/clock/Aulas/CG/Projeto/Generator/generator.cpp
+string.h
+-
+stdlib.h
+-
+fstream
+-
+../Structs/Forma.h
+/home/clock/Aulas/CG/Projeto/Structs/Forma.h
+plane.h
+/home/clock/Aulas/CG/Projeto/Generator/plane.h
+box.h
+/home/clock/Aulas/CG/Projeto/Generator/box.h
+
+/home/clock/Aulas/CG/Projeto/Generator/plane.h
+../Structs/Forma.h
+/home/clock/Aulas/CG/Projeto/Structs/Forma.h
+
+/home/clock/Aulas/CG/Projeto/Structs/Forma.h
+vector
+-
+Ponto.h
+/home/clock/Aulas/CG/Projeto/Structs/Ponto.h
+
+/home/clock/Aulas/CG/Projeto/Structs/Ponto.h
+
