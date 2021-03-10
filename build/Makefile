@@ -131,17 +131,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named projeto
+# Target rules for targets named generator
 
 # Build rule for target.
-projeto: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 projeto
-.PHONY : projeto
+generator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 generator
+.PHONY : generator
 
 # fast build rule for target.
-projeto/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/build
-.PHONY : projeto/fast
+generator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
+.PHONY : generator/fast
 
 Generator/box.o: Generator/box.cpp.o
 
@@ -149,7 +149,7 @@ Generator/box.o: Generator/box.cpp.o
 
 # target to build an object file
 Generator/box.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/box.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/box.cpp.o
 .PHONY : Generator/box.cpp.o
 
 Generator/box.i: Generator/box.cpp.i
@@ -158,7 +158,7 @@ Generator/box.i: Generator/box.cpp.i
 
 # target to preprocess a source file
 Generator/box.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/box.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/box.cpp.i
 .PHONY : Generator/box.cpp.i
 
 Generator/box.s: Generator/box.cpp.s
@@ -167,7 +167,7 @@ Generator/box.s: Generator/box.cpp.s
 
 # target to generate assembly for a file
 Generator/box.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/box.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/box.cpp.s
 .PHONY : Generator/box.cpp.s
 
 Generator/cone.o: Generator/cone.cpp.o
@@ -176,7 +176,7 @@ Generator/cone.o: Generator/cone.cpp.o
 
 # target to build an object file
 Generator/cone.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/cone.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/cone.cpp.o
 .PHONY : Generator/cone.cpp.o
 
 Generator/cone.i: Generator/cone.cpp.i
@@ -185,7 +185,7 @@ Generator/cone.i: Generator/cone.cpp.i
 
 # target to preprocess a source file
 Generator/cone.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/cone.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/cone.cpp.i
 .PHONY : Generator/cone.cpp.i
 
 Generator/cone.s: Generator/cone.cpp.s
@@ -194,7 +194,7 @@ Generator/cone.s: Generator/cone.cpp.s
 
 # target to generate assembly for a file
 Generator/cone.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/cone.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/cone.cpp.s
 .PHONY : Generator/cone.cpp.s
 
 Generator/generator.o: Generator/generator.cpp.o
@@ -203,7 +203,7 @@ Generator/generator.o: Generator/generator.cpp.o
 
 # target to build an object file
 Generator/generator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/generator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/generator.cpp.o
 .PHONY : Generator/generator.cpp.o
 
 Generator/generator.i: Generator/generator.cpp.i
@@ -212,7 +212,7 @@ Generator/generator.i: Generator/generator.cpp.i
 
 # target to preprocess a source file
 Generator/generator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/generator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/generator.cpp.i
 .PHONY : Generator/generator.cpp.i
 
 Generator/generator.s: Generator/generator.cpp.s
@@ -221,7 +221,7 @@ Generator/generator.s: Generator/generator.cpp.s
 
 # target to generate assembly for a file
 Generator/generator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/generator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/generator.cpp.s
 .PHONY : Generator/generator.cpp.s
 
 Generator/plane.o: Generator/plane.cpp.o
@@ -230,7 +230,7 @@ Generator/plane.o: Generator/plane.cpp.o
 
 # target to build an object file
 Generator/plane.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/plane.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/plane.cpp.o
 .PHONY : Generator/plane.cpp.o
 
 Generator/plane.i: Generator/plane.cpp.i
@@ -239,7 +239,7 @@ Generator/plane.i: Generator/plane.cpp.i
 
 # target to preprocess a source file
 Generator/plane.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/plane.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/plane.cpp.i
 .PHONY : Generator/plane.cpp.i
 
 Generator/plane.s: Generator/plane.cpp.s
@@ -248,7 +248,7 @@ Generator/plane.s: Generator/plane.cpp.s
 
 # target to generate assembly for a file
 Generator/plane.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/plane.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/plane.cpp.s
 .PHONY : Generator/plane.cpp.s
 
 Generator/sphere.o: Generator/sphere.cpp.o
@@ -257,7 +257,7 @@ Generator/sphere.o: Generator/sphere.cpp.o
 
 # target to build an object file
 Generator/sphere.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/sphere.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/sphere.cpp.o
 .PHONY : Generator/sphere.cpp.o
 
 Generator/sphere.i: Generator/sphere.cpp.i
@@ -266,7 +266,7 @@ Generator/sphere.i: Generator/sphere.cpp.i
 
 # target to preprocess a source file
 Generator/sphere.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/sphere.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/sphere.cpp.i
 .PHONY : Generator/sphere.cpp.i
 
 Generator/sphere.s: Generator/sphere.cpp.s
@@ -275,7 +275,7 @@ Generator/sphere.s: Generator/sphere.cpp.s
 
 # target to generate assembly for a file
 Generator/sphere.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/sphere.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/sphere.cpp.s
 .PHONY : Generator/sphere.cpp.s
 
 Structs/Forma.o: Structs/Forma.cpp.o
@@ -284,7 +284,7 @@ Structs/Forma.o: Structs/Forma.cpp.o
 
 # target to build an object file
 Structs/Forma.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Structs/Forma.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Forma.cpp.o
 .PHONY : Structs/Forma.cpp.o
 
 Structs/Forma.i: Structs/Forma.cpp.i
@@ -293,7 +293,7 @@ Structs/Forma.i: Structs/Forma.cpp.i
 
 # target to preprocess a source file
 Structs/Forma.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Structs/Forma.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Forma.cpp.i
 .PHONY : Structs/Forma.cpp.i
 
 Structs/Forma.s: Structs/Forma.cpp.s
@@ -302,7 +302,7 @@ Structs/Forma.s: Structs/Forma.cpp.s
 
 # target to generate assembly for a file
 Structs/Forma.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Structs/Forma.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Forma.cpp.s
 .PHONY : Structs/Forma.cpp.s
 
 Structs/Ponto.o: Structs/Ponto.cpp.o
@@ -311,7 +311,7 @@ Structs/Ponto.o: Structs/Ponto.cpp.o
 
 # target to build an object file
 Structs/Ponto.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Structs/Ponto.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Ponto.cpp.o
 .PHONY : Structs/Ponto.cpp.o
 
 Structs/Ponto.i: Structs/Ponto.cpp.i
@@ -320,7 +320,7 @@ Structs/Ponto.i: Structs/Ponto.cpp.i
 
 # target to preprocess a source file
 Structs/Ponto.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Structs/Ponto.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Ponto.cpp.i
 .PHONY : Structs/Ponto.cpp.i
 
 Structs/Ponto.s: Structs/Ponto.cpp.s
@@ -329,7 +329,7 @@ Structs/Ponto.s: Structs/Ponto.cpp.s
 
 # target to generate assembly for a file
 Structs/Ponto.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Structs/Ponto.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Ponto.cpp.s
 .PHONY : Structs/Ponto.cpp.s
 
 # Help Target
@@ -340,7 +340,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... projeto"
+	@echo "... generator"
 	@echo "... Generator/box.o"
 	@echo "... Generator/box.i"
 	@echo "... Generator/box.s"

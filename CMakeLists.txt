@@ -1,10 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 
 # Project Name
-PROJECT(projeto)
-
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
+project(generator)
 add_executable(${PROJECT_NAME} Generator/generator.cpp Structs/Ponto.cpp Structs/Ponto.h Structs/Forma.cpp Structs/Forma.h Generator/plane.cpp Generator/plane.h Generator/box.cpp Generator/box.h Generator/cone.cpp Generator/cone.h Generator/sphere.cpp Generator/sphere.h)
 
 find_package(OpenGL REQUIRED)

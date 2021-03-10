@@ -73,7 +73,7 @@ CMAKE_BINARY_DIR = /home/clock/Aulas/CG/Projeto/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/projeto.dir/all
+all: CMakeFiles/generator.dir/all
 
 .PHONY : all
 
@@ -83,36 +83,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/projeto.dir/clean
+clean: CMakeFiles/generator.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/projeto.dir
+# Target rules for target CMakeFiles/generator.dir
 
 # All Build rule for target.
-CMakeFiles/projeto.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/clock/Aulas/CG/Projeto/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target projeto"
-.PHONY : CMakeFiles/projeto.dir/all
+CMakeFiles/generator.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/clock/Aulas/CG/Projeto/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target generator"
+.PHONY : CMakeFiles/generator.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/projeto.dir/rule: cmake_check_build_system
+CMakeFiles/generator.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/clock/Aulas/CG/Projeto/build/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/projeto.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/generator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/clock/Aulas/CG/Projeto/build/CMakeFiles 0
-.PHONY : CMakeFiles/projeto.dir/rule
+.PHONY : CMakeFiles/generator.dir/rule
 
 # Convenience name for target.
-projeto: CMakeFiles/projeto.dir/rule
+generator: CMakeFiles/generator.dir/rule
 
-.PHONY : projeto
+.PHONY : generator
 
 # clean rule for target.
-CMakeFiles/projeto.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/clean
-.PHONY : CMakeFiles/projeto.dir/clean
+CMakeFiles/generator.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/clean
+.PHONY : CMakeFiles/generator.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
