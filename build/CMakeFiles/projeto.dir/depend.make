@@ -6,9 +6,16 @@ CMakeFiles/projeto.dir/Generator/box.cpp.o: ../Generator/box.h
 CMakeFiles/projeto.dir/Generator/box.cpp.o: ../Structs/Forma.h
 CMakeFiles/projeto.dir/Generator/box.cpp.o: ../Structs/Ponto.h
 
+CMakeFiles/projeto.dir/Generator/cone.cpp.o: ../Generator/cone.cpp
+CMakeFiles/projeto.dir/Generator/cone.cpp.o: ../Generator/cone.h
+CMakeFiles/projeto.dir/Generator/cone.cpp.o: ../Structs/Forma.h
+CMakeFiles/projeto.dir/Generator/cone.cpp.o: ../Structs/Ponto.h
+
 CMakeFiles/projeto.dir/Generator/generator.cpp.o: ../Generator/box.h
+CMakeFiles/projeto.dir/Generator/generator.cpp.o: ../Generator/cone.h
 CMakeFiles/projeto.dir/Generator/generator.cpp.o: ../Generator/generator.cpp
 CMakeFiles/projeto.dir/Generator/generator.cpp.o: ../Generator/plane.h
+CMakeFiles/projeto.dir/Generator/generator.cpp.o: ../Generator/sphere.h
 CMakeFiles/projeto.dir/Generator/generator.cpp.o: ../Structs/Forma.h
 CMakeFiles/projeto.dir/Generator/generator.cpp.o: ../Structs/Ponto.h
 
@@ -16,6 +23,11 @@ CMakeFiles/projeto.dir/Generator/plane.cpp.o: ../Generator/plane.cpp
 CMakeFiles/projeto.dir/Generator/plane.cpp.o: ../Generator/plane.h
 CMakeFiles/projeto.dir/Generator/plane.cpp.o: ../Structs/Forma.h
 CMakeFiles/projeto.dir/Generator/plane.cpp.o: ../Structs/Ponto.h
+
+CMakeFiles/projeto.dir/Generator/sphere.cpp.o: ../Generator/sphere.cpp
+CMakeFiles/projeto.dir/Generator/sphere.cpp.o: ../Generator/sphere.h
+CMakeFiles/projeto.dir/Generator/sphere.cpp.o: ../Structs/Forma.h
+CMakeFiles/projeto.dir/Generator/sphere.cpp.o: ../Structs/Ponto.h
 
 CMakeFiles/projeto.dir/Structs/Forma.cpp.o: ../Structs/Forma.cpp
 CMakeFiles/projeto.dir/Structs/Forma.cpp.o: ../Structs/Forma.h

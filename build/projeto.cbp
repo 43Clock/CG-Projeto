@@ -88,6 +88,12 @@
 		<Unit filename="/home/clock/Aulas/CG/Projeto/Generator/box.h">
 			<Option target="projeto"/>
 		</Unit>
+		<Unit filename="/home/clock/Aulas/CG/Projeto/Generator/cone.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="/home/clock/Aulas/CG/Projeto/Generator/cone.h">
+			<Option target="projeto"/>
+		</Unit>
 		<Unit filename="/home/clock/Aulas/CG/Projeto/Generator/generator.cpp">
 			<Option target="projeto"/>
 		</Unit>
@@ -95,6 +101,12 @@
 			<Option target="projeto"/>
 		</Unit>
 		<Unit filename="/home/clock/Aulas/CG/Projeto/Generator/plane.h">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="/home/clock/Aulas/CG/Projeto/Generator/sphere.cpp">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="/home/clock/Aulas/CG/Projeto/Generator/sphere.h">
 			<Option target="projeto"/>
 		</Unit>
 		<Unit filename="/home/clock/Aulas/CG/Projeto/Structs/Forma.cpp">

@@ -170,6 +170,33 @@ Generator/box.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/box.cpp.s
 .PHONY : Generator/box.cpp.s
 
+Generator/cone.o: Generator/cone.cpp.o
+
+.PHONY : Generator/cone.o
+
+# target to build an object file
+Generator/cone.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/cone.cpp.o
+.PHONY : Generator/cone.cpp.o
+
+Generator/cone.i: Generator/cone.cpp.i
+
+.PHONY : Generator/cone.i
+
+# target to preprocess a source file
+Generator/cone.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/cone.cpp.i
+.PHONY : Generator/cone.cpp.i
+
+Generator/cone.s: Generator/cone.cpp.s
+
+.PHONY : Generator/cone.s
+
+# target to generate assembly for a file
+Generator/cone.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/cone.cpp.s
+.PHONY : Generator/cone.cpp.s
+
 Generator/generator.o: Generator/generator.cpp.o
 
 .PHONY : Generator/generator.o
@@ -223,6 +250,33 @@ Generator/plane.s: Generator/plane.cpp.s
 Generator/plane.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/plane.cpp.s
 .PHONY : Generator/plane.cpp.s
+
+Generator/sphere.o: Generator/sphere.cpp.o
+
+.PHONY : Generator/sphere.o
+
+# target to build an object file
+Generator/sphere.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/sphere.cpp.o
+.PHONY : Generator/sphere.cpp.o
+
+Generator/sphere.i: Generator/sphere.cpp.i
+
+.PHONY : Generator/sphere.i
+
+# target to preprocess a source file
+Generator/sphere.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/sphere.cpp.i
+.PHONY : Generator/sphere.cpp.i
+
+Generator/sphere.s: Generator/sphere.cpp.s
+
+.PHONY : Generator/sphere.s
+
+# target to generate assembly for a file
+Generator/sphere.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Generator/sphere.cpp.s
+.PHONY : Generator/sphere.cpp.s
 
 Structs/Forma.o: Structs/Forma.cpp.o
 
@@ -290,12 +344,18 @@ help:
 	@echo "... Generator/box.o"
 	@echo "... Generator/box.i"
 	@echo "... Generator/box.s"
+	@echo "... Generator/cone.o"
+	@echo "... Generator/cone.i"
+	@echo "... Generator/cone.s"
 	@echo "... Generator/generator.o"
 	@echo "... Generator/generator.i"
 	@echo "... Generator/generator.s"
 	@echo "... Generator/plane.o"
 	@echo "... Generator/plane.i"
 	@echo "... Generator/plane.s"
+	@echo "... Generator/sphere.o"
+	@echo "... Generator/sphere.i"
+	@echo "... Generator/sphere.s"
 	@echo "... Structs/Forma.o"
 	@echo "... Structs/Forma.i"
 	@echo "... Structs/Forma.s"

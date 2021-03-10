@@ -5,8 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/clock/Aulas/CG/Projeto/Generator/box.cpp" "/home/clock/Aulas/CG/Projeto/build/CMakeFiles/projeto.dir/Generator/box.cpp.o"
+  "/home/clock/Aulas/CG/Projeto/Generator/cone.cpp" "/home/clock/Aulas/CG/Projeto/build/CMakeFiles/projeto.dir/Generator/cone.cpp.o"
   "/home/clock/Aulas/CG/Projeto/Generator/generator.cpp" "/home/clock/Aulas/CG/Projeto/build/CMakeFiles/projeto.dir/Generator/generator.cpp.o"
   "/home/clock/Aulas/CG/Projeto/Generator/plane.cpp" "/home/clock/Aulas/CG/Projeto/build/CMakeFiles/projeto.dir/Generator/plane.cpp.o"
+  "/home/clock/Aulas/CG/Projeto/Generator/sphere.cpp" "/home/clock/Aulas/CG/Projeto/build/CMakeFiles/projeto.dir/Generator/sphere.cpp.o"
   "/home/clock/Aulas/CG/Projeto/Structs/Forma.cpp" "/home/clock/Aulas/CG/Projeto/build/CMakeFiles/projeto.dir/Structs/Forma.cpp.o"
   "/home/clock/Aulas/CG/Projeto/Structs/Ponto.cpp" "/home/clock/Aulas/CG/Projeto/build/CMakeFiles/projeto.dir/Structs/Ponto.cpp.o"
   )
