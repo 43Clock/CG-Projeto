@@ -12,15 +12,15 @@
 void writeFile(Forma *f,char *path){
     char paths[1024];
     char string[1024];
-    strcpy(paths,"../");
+    strcpy(paths,"../3dObjects/");
     strcat(paths,path);
     ofstream file(paths);
     vector<Ponto*> pontos = f->getPontos();
     for(int i = 0;i<pontos.size();i++){
         Ponto *p = pontos.at(i);
         if(i != pontos.size()-1)
-            sprintf(string,"glVertex3f(%f,%f,%f);\n",p->getX(),p->getY(),p->getZ());
-        else sprintf(string,"glVertex3f(%f,%f,%f);",p->getX(),p->getY(),p->getZ());
+            sprintf(string,"%f %f %f\n",p->getX(),p->getY(),p->getZ());
+        else sprintf(string,"%f %f %f",p->getX(),p->getY(),p->getZ());
         file << string;
     }
     file.close();
