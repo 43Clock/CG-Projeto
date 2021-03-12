@@ -278,6 +278,12 @@ class1_BINARY_DIR:STATIC=/home/clock/Aulas/CG/Projeto/build
 class1_SOURCE_DIR:STATIC=/home/clock/Aulas/CG/Projeto
 
 //Value Computed by CMake
+engine_BINARY_DIR:STATIC=/home/clock/Aulas/CG/Projeto/build
+
+//Value Computed by CMake
+engine_SOURCE_DIR:STATIC=/home/clock/Aulas/CG/Projeto
+
+//Value Computed by CMake
 generator_BINARY_DIR:STATIC=/home/clock/Aulas/CG/Projeto/build
 
 //Value Computed by CMake

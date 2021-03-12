@@ -76,17 +76,6 @@ CMAKE_BINARY_DIR = /home/clock/Aulas/CG/Projeto/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/139/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -97,6 +86,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/snap/clion/139/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -142,6 +142,73 @@ generator: cmake_check_build_system
 generator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
 .PHONY : generator/fast
+
+#=============================================================================
+# Target rules for targets named engine
+
+# Build rule for target.
+engine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 engine
+.PHONY : engine
+
+# fast build rule for target.
+engine/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/build
+.PHONY : engine/fast
+
+Engine/main.o: Engine/main.cpp.o
+
+.PHONY : Engine/main.o
+
+# target to build an object file
+Engine/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/main.cpp.o
+.PHONY : Engine/main.cpp.o
+
+Engine/main.i: Engine/main.cpp.i
+
+.PHONY : Engine/main.i
+
+# target to preprocess a source file
+Engine/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/main.cpp.i
+.PHONY : Engine/main.cpp.i
+
+Engine/main.s: Engine/main.cpp.s
+
+.PHONY : Engine/main.s
+
+# target to generate assembly for a file
+Engine/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/main.cpp.s
+.PHONY : Engine/main.cpp.s
+
+Engine/tinyxml2.o: Engine/tinyxml2.cpp.o
+
+.PHONY : Engine/tinyxml2.o
+
+# target to build an object file
+Engine/tinyxml2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/tinyxml2.cpp.o
+.PHONY : Engine/tinyxml2.cpp.o
+
+Engine/tinyxml2.i: Engine/tinyxml2.cpp.i
+
+.PHONY : Engine/tinyxml2.i
+
+# target to preprocess a source file
+Engine/tinyxml2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/tinyxml2.cpp.i
+.PHONY : Engine/tinyxml2.cpp.i
+
+Engine/tinyxml2.s: Engine/tinyxml2.cpp.s
+
+.PHONY : Engine/tinyxml2.s
+
+# target to generate assembly for a file
+Engine/tinyxml2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/tinyxml2.cpp.s
+.PHONY : Engine/tinyxml2.cpp.s
 
 Generator/box.o: Generator/box.cpp.o
 
@@ -285,6 +352,7 @@ Structs/Forma.o: Structs/Forma.cpp.o
 # target to build an object file
 Structs/Forma.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Forma.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Structs/Forma.cpp.o
 .PHONY : Structs/Forma.cpp.o
 
 Structs/Forma.i: Structs/Forma.cpp.i
@@ -294,6 +362,7 @@ Structs/Forma.i: Structs/Forma.cpp.i
 # target to preprocess a source file
 Structs/Forma.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Forma.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Structs/Forma.cpp.i
 .PHONY : Structs/Forma.cpp.i
 
 Structs/Forma.s: Structs/Forma.cpp.s
@@ -303,6 +372,7 @@ Structs/Forma.s: Structs/Forma.cpp.s
 # target to generate assembly for a file
 Structs/Forma.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Forma.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Structs/Forma.cpp.s
 .PHONY : Structs/Forma.cpp.s
 
 Structs/Ponto.o: Structs/Ponto.cpp.o
@@ -312,6 +382,7 @@ Structs/Ponto.o: Structs/Ponto.cpp.o
 # target to build an object file
 Structs/Ponto.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Ponto.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Structs/Ponto.cpp.o
 .PHONY : Structs/Ponto.cpp.o
 
 Structs/Ponto.i: Structs/Ponto.cpp.i
@@ -321,6 +392,7 @@ Structs/Ponto.i: Structs/Ponto.cpp.i
 # target to preprocess a source file
 Structs/Ponto.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Ponto.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Structs/Ponto.cpp.i
 .PHONY : Structs/Ponto.cpp.i
 
 Structs/Ponto.s: Structs/Ponto.cpp.s
@@ -330,6 +402,7 @@ Structs/Ponto.s: Structs/Ponto.cpp.s
 # target to generate assembly for a file
 Structs/Ponto.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Structs/Ponto.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Structs/Ponto.cpp.s
 .PHONY : Structs/Ponto.cpp.s
 
 # Help Target
@@ -340,7 +413,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... engine"
 	@echo "... generator"
+	@echo "... Engine/main.o"
+	@echo "... Engine/main.i"
+	@echo "... Engine/main.s"
+	@echo "... Engine/tinyxml2.o"
+	@echo "... Engine/tinyxml2.i"
+	@echo "... Engine/tinyxml2.s"
 	@echo "... Generator/box.o"
 	@echo "... Generator/box.i"
 	@echo "... Generator/box.s"

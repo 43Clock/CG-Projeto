@@ -1,0 +1,4 @@
+<scene>
+    <model file = "../3dObjects/box.3d"/>
+    <model file = "../3dObjects/plane.3d"/>
+</scene>

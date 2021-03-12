@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
 
 # Project Name
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+#set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
+project(engine)
+add_executable(${PROJECT_NAME} Structs/Ponto.cpp Structs/Ponto.h Structs/Forma.cpp Structs/Forma.h Engine/main.cpp Engine/tinyxml2.cpp Engine/tinyxml2.h)
 project(generator)
-add_executable(${PROJECT_NAME} Generator/generator.cpp Structs/Ponto.cpp Structs/Ponto.h Structs/Forma.cpp Structs/Forma.h Generator/plane.cpp Generator/plane.h Generator/box.cpp Generator/box.h Generator/cone.cpp Generator/cone.h Generator/sphere.cpp Generator/sphere.h)
+add_executable(${PROJECT_NAME} Generator/generator.cpp Structs/Ponto.cpp Structs/Ponto.h Structs/Forma.cpp Structs/Forma.h Generator/plane.cpp Generator/plane.h Generator/box.cpp Generator/box.h Generator/cone.cpp Generator/cone.h Generator/sphere.cpp Generator/sphere.h )
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS})
@@ -22,13 +24,12 @@ if  (WIN32)
 	
 	if (NOT EXISTS "${TOOLKITS_FOLDER}/glut/GL/glut.h" OR NOT EXISTS "${TOOLKITS_FOLDER}/glut/glut32.lib")
 		message(ERROR ": GLUT not found")
-	endif (NOT EXISTS "${TOOLKITS_FOLDER}/glut/GL/glut.h" OR NOT EXISTS "${TOOLKITS_FOLDER}/glut/glut32.lib")	
-	
-	
+	endif (NOT EXISTS "${TOOLKITS_FOLDER}/glut/GL/glut.h" OR NOT EXISTS "${TOOLKITS_FOLDER}/glut/glut32.lib")
 	include_directories(${TOOLKITS_FOLDER}/glut )
 	target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} 
 										  ${TOOLKITS_FOLDER}/glut/glut32.lib)
-	
+	target_link_libraries(engine ${OPENGL_LIBRARIES} ${GLUT_DIR}/glut32.lib )
+
 	if (EXISTS "${TOOLKITS_FOLDER}/glut/glut32.dll" )
 		file(COPY ${TOOLKITS_FOLDER}/glut/glut32.dll DESTINATION ${CMAKE_BINARY_DIR})
 	endif(EXISTS "${TOOLKITS_FOLDER}/glut/glut32.dll" )	
@@ -44,6 +45,8 @@ else (WIN32) #Linux and Mac
 	add_definitions(${GLUT_DEFINITIONS})
 	
 	target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
+	target_link_libraries(engine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
+
 	if(NOT GLUT_FOUND)
 	   message(ERROR ": GLUT not found!")
 	endif(NOT GLUT_FOUND)
