@@ -82,6 +82,10 @@ int main(int argc, char **argv){
     else if(strcmp(argv[1],"box")==0 && argc == 7){
         geraBox(argv[2],argv[3],argv[4],argv[5],argv[6]);
     }
+    else if(strcmp(argv[1],"box")==0 && argc == 6){
+        char um[2] = "1";
+        geraBox(argv[2],argv[3],argv[4],um,argv[5]);
+    }
     else if(strcmp(argv[1],"cone")==0 && argc == 7){
         geraCone(argv[2],argv[3],argv[4],argv[5],argv[6]);
     }
