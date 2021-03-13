@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/clock/Aulas/CG/Projeto/Generator/plane.cpp
-plane.h
-/home/clock/Aulas/CG/Projeto/Generator/plane.h
+/home/clock/Aulas/CG/Projeto/Generator/cone.cpp
+cone.h
+/home/clock/Aulas/CG/Projeto/Generator/cone.h
 
-/home/clock/Aulas/CG/Projeto/Generator/plane.h
+/home/clock/Aulas/CG/Projeto/Generator/cone.h
 ../Structs/Forma.h
 /home/clock/Aulas/CG/Projeto/Structs/Forma.h
+math.h
+-
 
 /home/clock/Aulas/CG/Projeto/Structs/Forma.h
 vector
