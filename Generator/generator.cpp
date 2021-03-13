@@ -59,7 +59,7 @@ void imprimeAjuda(){
     cout<< "| Cria um quadrado no plano XZ, centrado na origem.                   |" <<endl;
     cout<< "|                                                                     |" <<endl;
     cout<< "|- box <WIDTH> <HEIGHT> <LENGTH> <DIVISIONS>                          |" <<endl;
-    cout<< "| Cria uma box com as dimensões dadas e com um certo numero devisões. |" <<endl;
+    cout<< "| Cria uma box com as dimensões dadas e com um certo numero divisões. |" <<endl;
     cout<< "|                                                                     |" <<endl;
     cout<< "|- sphere <RADIUS> <SLICES> <STACKS>                                  |" <<endl;
     cout<< "| Cria uma esfera com o raio, slices e stacks fornecidos              |" <<endl;
