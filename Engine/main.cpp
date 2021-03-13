@@ -13,9 +13,9 @@
 #include "../Structs/Forma.h"
 #include "../Structs/Ponto.h"
 
-float alpha = 0.0f;
-float beta = 0.0f;
-float radius = 6.0f;
+float alpha = M_PI/4;
+float beta = M_PI/4;
+float radius = 10.0f;
 
 float px = radius * cos(beta)*sin(alpha);
 float pz = radius * cos(beta)*cos(alpha);
@@ -61,7 +61,9 @@ void readXML(char *path){
             x = x->NextSiblingElement();
             readFile(file);
         }
-
+    }else {
+        printf("Ficheiro não existe/inválido");
+        exit(1);
     }
 }
 
@@ -109,13 +111,23 @@ void renderScene(void) {
     glPolygonMode(GL_FRONT_AND_BACK,tipo);
     for (int i = 0; i < formas.size(); ++i) {
         vector<Ponto*> pontos = formas[i]->getPontos();
+        color = 0.0f;
+        float colorValueChange = (float) 1/(pontos.size()/(float)(3));
         for (int j = 0; j <pontos.size() ; j+=3) {
-            if(colorChange){
-                glColor3f(fabs(sin(color)),fabs(sin(color)),fabs(sin(color)));
-                color+=0.01f;
+            if (colorChange == 4){
+                glColor3f(color,0,0);
+            }else if(colorChange == 3){
+                glColor3f(0,color,0);
+            }
+            else if (colorChange == 2){
+                glColor3f(0,0,color);
+            }
+            else if(colorChange==1){
+                glColor3f(color,color,color);
             }else{
                 glColor3f(1.0f,1.0f,1.0f);
             }
+            color+=colorValueChange;
             glBegin(GL_TRIANGLES);
                 glVertex3f(pontos[j]->getX(),pontos[j]->getY(),pontos[j]->getZ());
                 glVertex3f(pontos[j+1]->getX(),pontos[j+1]->getY(),pontos[j+1]->getZ());
@@ -152,19 +164,27 @@ void processSpecialKeyboard(int key,int x,int y){
     }
 }
 
+float min(float a,float b) {
+    return a>b?b:a;
+}
 
+float max(float a,float b) {
+    return a>b?a:b;
+}
 
 void processKeyboard(unsigned char key,int x,int y){
     switch (key) {
         case 'w':
-            if(beta<1.54f) beta += 0.05f;
+            if(beta<(float)M_PI/2) beta += 0.05f;
+            beta = min((M_PI/2)-0.05f,beta);
             px = radius * cos(beta)*sin(alpha);
             pz = radius * cos(beta)*cos(alpha);
             py = radius * sin(beta);
             glutPostRedisplay();
             break;
         case 's':
-            if(beta>=-1.54f) beta -= 0.05f;
+            if(beta>=-(float)M_PI/2) beta -= 0.05f;
+            beta = max((-M_PI/2)+0.05f,beta);
             px = radius * cos(beta)*sin(alpha);
             pz = radius * cos(beta)*cos(alpha);
             py = radius * sin(beta);
@@ -204,17 +224,82 @@ void processKeyboard(unsigned char key,int x,int y){
             colorChange = 0;
             glutPostRedisplay();
             break;
+        case 'r':
+            colorChange = 4;
+            glutPostRedisplay();
+            break;
+        case 'g':
+            colorChange = 3;
+            glutPostRedisplay();
+            break;
+        case 'b':
+            colorChange = 2;
+            glutPostRedisplay();
+            break;
     }
 }
 
+void imprimeAjuda (){
+    cout<< "+---------------------------------------------------------------------+" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "| Como usar: ./engine <XMLFile>                                       |" <<endl;
+    cout<< "|                       [-h]                                          |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|  XMLFile:                                                           |" <<endl;
+    cout<< "|  Path para o ficheiro XML que contem a informação sobre             |" <<endl;
+    cout<< "|  quais figuras desenhar.                                            |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|  Comandos (Mover):                                                  |" <<endl;
+    cout<< "|- W:                                                                 |" <<endl;
+    cout<< "|   Roda a câmera para cima                                           |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|- A:                                                                 |" <<endl;
+    cout<< "|   Roda a câmera para a esquerda                                     |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|- S:                                                                 |" <<endl;
+    cout<< "|   Roda a câmera para a direira                                      |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|- D:                                                                 |" <<endl;
+    cout<< "|   Roda a câmera para baixo                                          |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|  Comandos (Zoom):                                                   |" <<endl;
+    cout<< "|- UP_ARROW_KEY:                                                      |" <<endl;
+    cout<< "|       Zoom in                                                       |" <<endl;
+    cout<< "|- Down_ARROW_KEY:                                                    |" <<endl;
+    cout<< "|       Zoom out                                                      |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "| Comandos (Formatar):                                                |" <<endl;
+    cout<< "|- i:                                                                 |" <<endl;
+    cout<< "|    Desenhar os triângulos preenchidos                               |" <<endl;
+    cout<< "|- o:                                                                 |" <<endl;
+    cout<< "|    Desenhar apenas as bordas dos triângulos                         |" <<endl;
+    cout<< "|- p:                                                                 |" <<endl;
+    cout<< "|    Desenhar apenas os vértices dos triângulos                       |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "| Comandos (Cores):                                                   |" <<endl;
+    cout<< "|- v:                                                                 |" <<endl;
+    cout<< "|   Pintar tudo a branco                                              |" <<endl;
+    cout<< "|- c:                                                                 |" <<endl;
+    cout<< "|   Pintar com um gradiente de preto e branco                         |" <<endl;
+    cout<< "|- r:                                                                 |" <<endl;
+    cout<< "|   Pintar com um gradiente de vermelho                               |" <<endl;
+    cout<< "|- g:                                                                 |" <<endl;
+    cout<< "|   Pintar com um gradiente de verde                                  |" <<endl;
+    cout<< "|- b:                                                                 |" <<endl;
+    cout<< "|   Pintar com um gradiente de azul                                   |" <<endl;
+    cout<< "+---------------------------------------------------------------------+" <<endl;
+}
 
-//@TODO Fazer menu a explicar os comandos e meter cores mais bonitas
 int main(int argc, char **argv) {
     if (argc >2){
         return 0;
     }
-    readXML(argv[1]);
+    if(strcmp(argv[1],"-h") == 0){
+        imprimeAjuda();
+        return 0;
+    }
 
+    readXML(argv[1]);
 // init GLUT and the window
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);

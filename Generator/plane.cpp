@@ -13,5 +13,13 @@ Forma *plane(float size){
     f->inserePonto(new Ponto(size/2.0f,0.0f,-size/2.0f));
     f->inserePonto(new Ponto(-size/2.0f,0.0f,-size/2.0f));
     f->inserePonto(new Ponto(-size/2.0f,0.0f,size/2.0f));
+
+    f->inserePonto(new Ponto(size/2.0f,0.0f,-size/2.0f));
+    f->inserePonto(new Ponto(size/2.0f,0.0f,size/2.0f));
+    f->inserePonto(new Ponto(-size/2.0f,0.0f,size/2.0f));
+
+    f->inserePonto(new Ponto(size/2.0f,0.0f,-size/2.0f));
+    f->inserePonto(new Ponto(-size/2.0f,0.0f,size/2.0f));
+    f->inserePonto(new Ponto(-size/2.0f,0.0f,-size/2.0f));
     return f;
 }

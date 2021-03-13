@@ -49,25 +49,25 @@ void geraEsfera(char *raio, char *slices, char *stacks, char *path) {
 }
 
 void imprimeAjuda(){
-    cout<< "-------------------------------------------------------------------" <<endl;
-    cout<< "                                                                   " <<endl;
-    cout<< " How to use: ./generator <SHAPE> ... <FILE>                        " <<endl;
-    cout<< "                         [-h]                                      " <<endl;
-    cout<< "                                                                   " <<endl;
-    cout<< "  SHAPE:                                                           " <<endl;
-    cout<< "- plane <SIZE>                                                     " <<endl;
-    cout<< " Create a square in the XZ plane, centred in the origin.           " <<endl;
-    cout<< "                                                                   " <<endl;
-    cout<< "- box <HEIGHT> <WIDTH> <LENGTH> <DIVISIONS>                        " <<endl;
-    cout<< " Create a box with these dimensions and divisions                  " <<endl;
-    cout<< "                                                                   " <<endl;
-    cout<< "- sphere <RADIUS> <SLICES> <STACKS>                                " <<endl;
-    cout<< " Create a sphere with the radius, number of slices and stacks      " <<endl;
-    cout<< "                                                                   " <<endl;
-    cout<< "- cone <RADIUS> <HEIGHT> <SLICES> <STACKS>                         " <<endl;
-    cout<< " Create a cone with the radius, height,slices and stacks           " <<endl;
-    cout<< "                                                                   " <<endl;
-    cout<< "-------------------------------------------------------------------" <<endl;
+    cout<< "+---------------------------------------------------------------------+" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "| Como usar: ./generator <SHAPE> ... <FILE>                           |" <<endl;
+    cout<< "|                         [-h]                                        |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|  SHAPE:                                                             |" <<endl;
+    cout<< "|- plane <SIZE>                                                       |" <<endl;
+    cout<< "| Cria um quadrado no plano XZ, centrado na origem.                   |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|- box <HEIGHT> <WIDTH> <LENGTH> <DIVISIONS>                          |" <<endl;
+    cout<< "| Cria uma box com as dimensões dadas e com um certo numero devisões. |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|- sphere <RADIUS> <SLICES> <STACKS>                                  |" <<endl;
+    cout<< "| Cria uma esfera com o raio, slices e stacks fornecidos              |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "|- cone <RADIUS> <HEIGHT> <SLICES> <STACKS>                           |" <<endl;
+    cout<< "| Cria um cone com o raio, altura, slices e stacks fornecidas         |" <<endl;
+    cout<< "|                                                                     |" <<endl;
+    cout<< "+---------------------------------------------------------------------+" <<endl;
 
 }
 
