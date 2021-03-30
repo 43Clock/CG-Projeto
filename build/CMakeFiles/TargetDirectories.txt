@@ -1,4 +1,0 @@
-/home/clock/Aulas/CG/Projeto/build/CMakeFiles/edit_cache.dir
-/home/clock/Aulas/CG/Projeto/build/CMakeFiles/generator.dir
-/home/clock/Aulas/CG/Projeto/build/CMakeFiles/rebuild_cache.dir
-/home/clock/Aulas/CG/Projeto/build/CMakeFiles/engine.dir
