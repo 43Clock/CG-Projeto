@@ -16,6 +16,7 @@ CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/cone.h
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/generator.cpp
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/plane.h
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/sphere.h
+CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/torus.h
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Structs/Forma.h
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Structs/Ponto.h
 
@@ -28,6 +29,11 @@ CMakeFiles/generator.dir/Generator/sphere.cpp.o: ../Generator/sphere.cpp
 CMakeFiles/generator.dir/Generator/sphere.cpp.o: ../Generator/sphere.h
 CMakeFiles/generator.dir/Generator/sphere.cpp.o: ../Structs/Forma.h
 CMakeFiles/generator.dir/Generator/sphere.cpp.o: ../Structs/Ponto.h
+
+CMakeFiles/generator.dir/Generator/torus.cpp.o: ../Generator/torus.cpp
+CMakeFiles/generator.dir/Generator/torus.cpp.o: ../Generator/torus.h
+CMakeFiles/generator.dir/Generator/torus.cpp.o: ../Structs/Forma.h
+CMakeFiles/generator.dir/Generator/torus.cpp.o: ../Structs/Ponto.h
 
 CMakeFiles/generator.dir/Structs/Forma.cpp.o: ../Structs/Forma.cpp
 CMakeFiles/generator.dir/Structs/Forma.cpp.o: ../Structs/Forma.h

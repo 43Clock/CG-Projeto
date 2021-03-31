@@ -8,6 +8,7 @@
 #include "box.h"
 #include "cone.h"
 #include "sphere.h"
+#include "torus.h"
 
 using namespace std;
 
@@ -48,6 +49,11 @@ void geraEsfera(char *raio, char *slices, char *stacks, char *path) {
     writeFile(f,path);
 }
 
+void geraTorus(char *r, char *R, char *slices, char *stacks,char *path) {
+    Forma * f = torus(atof(r),atof(R),atoi(slices),atoi(stacks));
+    writeFile(f,path);
+}
+
 void imprimeAjuda(){
     cout<< "+---------------------------------------------------------------------+" <<endl;
     cout<< "|                                                                     |" <<endl;
@@ -71,6 +77,8 @@ void imprimeAjuda(){
 
 }
 
+
+
 int main(int argc, char **argv){
     if (argc <2){
         imprimeAjuda();
@@ -91,6 +99,9 @@ int main(int argc, char **argv){
     }
     else if(strcmp(argv[1],"sphere")== 0 && argc == 6){
         geraEsfera(argv[2],argv[3],argv[4],argv[5]);
+    }
+    else if(strcmp(argv[1],"torus")== 0 && argc == 7){
+        geraTorus(argv[2],argv[3],argv[4],argv[5],argv[6]);
     }
     else imprimeAjuda();
     return 0;

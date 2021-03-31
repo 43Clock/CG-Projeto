@@ -17,6 +17,7 @@ CMakeFiles/generator.dir/Generator/generator.cpp.o
  /home/clock/Aulas/CG/Projeto/TP2/Generator/generator.cpp
  /home/clock/Aulas/CG/Projeto/TP2/Generator/plane.h
  /home/clock/Aulas/CG/Projeto/TP2/Generator/sphere.h
+ /home/clock/Aulas/CG/Projeto/TP2/Generator/torus.h
  /home/clock/Aulas/CG/Projeto/TP2/Structs/Forma.h
  /home/clock/Aulas/CG/Projeto/TP2/Structs/Ponto.h
 CMakeFiles/generator.dir/Generator/plane.cpp.o
@@ -27,6 +28,11 @@ CMakeFiles/generator.dir/Generator/plane.cpp.o
 CMakeFiles/generator.dir/Generator/sphere.cpp.o
  /home/clock/Aulas/CG/Projeto/TP2/Generator/sphere.cpp
  /home/clock/Aulas/CG/Projeto/TP2/Generator/sphere.h
+ /home/clock/Aulas/CG/Projeto/TP2/Structs/Forma.h
+ /home/clock/Aulas/CG/Projeto/TP2/Structs/Ponto.h
+CMakeFiles/generator.dir/Generator/torus.cpp.o
+ /home/clock/Aulas/CG/Projeto/TP2/Generator/torus.cpp
+ /home/clock/Aulas/CG/Projeto/TP2/Generator/torus.h
  /home/clock/Aulas/CG/Projeto/TP2/Structs/Forma.h
  /home/clock/Aulas/CG/Projeto/TP2/Structs/Ponto.h
 CMakeFiles/generator.dir/Structs/Forma.cpp.o

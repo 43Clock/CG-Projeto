@@ -16,7 +16,7 @@
 
 float alpha = M_PI/4;
 float beta = M_PI/4;
-float radius = 10.0f;
+float radius = 400.0f;
 
 float px = radius * cos(beta)*sin(alpha);
 float pz = radius * cos(beta)*cos(alpha);
@@ -118,13 +118,13 @@ void processaColor(XMLElement *child,Grupo *g){
     const char * zFile = child->Attribute("B");
     float x = 0.0f,y=0.0f,z=0.0f;
     if(xFile){
-        x = atof(xFile);
+        x = atof(xFile)/255;
     }
     if(yFile){
-        y = atof(yFile);
+        y = atof(yFile)/255;
     }
     if(zFile){
-        z = atof(zFile);
+        z = atof(zFile)/255;
     }
     g->adicionaTransformacao(new Transformacao("color",x,y,z,0.0f));
 }
@@ -205,6 +205,7 @@ void desenhaGrupo(Grupo *g) {
     for(Grupo * gp:gs){
         desenhaGrupo(gp);
     }
+    glColor3f(1,1,1);
     glPopMatrix();
 }
 
@@ -234,14 +235,14 @@ void changeSize(int w, int h) {
 	if(h == 0)
 		h = 1;
 
-	// compute window's aspect ratio 
+	// compute window's aspect ratio
 	float ratio = w * 1.0 / h;
 
 	// Set the projection matrix as current
 	glMatrixMode(GL_PROJECTION);
 	// Load Identity Matrix
 	glLoadIdentity();
-	
+
 	// Set the viewport to be the entire window
     glViewport(0, 0, w, h);
 
@@ -264,7 +265,19 @@ void renderScene(void) {
 			  0.0f,1.0f,0.0f);
 
 // put the geometric transformations here
+    glBegin(GL_LINES);
+    glColor3f(1.0f,0.0f,0.0f);
+    glVertex3f(0.0f,0.0f,0.0f);
+    glVertex3f(100.0f,0.0f,0.0f);
+    glColor3f(0.0f,1.0f,0.0f);
+    glVertex3f(0.0f,0.0f,0.0f);
+    glVertex3f(0.0f,100.0f,0.0f);
+    glColor3f(0.0f,0.0f,1.0f);
+    glVertex3f(0.0f,0.0f,0.0f);
+    glVertex3f(0.0f,0.0f,100.0f);
+    glEnd();
 
+    glColor3f(1,1,1);
 
 // put drawing instructions here
     glPolygonMode(GL_FRONT_AND_BACK,type);
@@ -279,17 +292,18 @@ void renderScene(void) {
 
 // write function to process keyboard events
 
-void processSpecialKeyboard(int key,int x,int y){
-    switch (key) {
-        case GLUT_KEY_UP:
-            radius -= 0.05f;
+void processMouseWhell(int button,int state,int x,int y){
+    switch (button) {
+        case 3:
+            radius -= 1.0f;
+            radius = radius>0.1f?radius:0;
             px = radius * cos(beta)*sin(alpha);
             pz = radius * cos(beta)*cos(alpha);
             py = radius * sin(beta);
             glutPostRedisplay();
             break;
-        case GLUT_KEY_DOWN:
-            radius += 0.05f;
+        case 4:
+            radius += 1.0f;
             px = radius * cos(beta)*sin(alpha);
             pz = radius * cos(beta)*cos(alpha);
             py = radius * sin(beta);
@@ -309,30 +323,30 @@ float max(float a,float b) {
 void processKeyboard(unsigned char key,int x,int y){
     switch (key) {
         case 'w':
-            if(beta<(float)M_PI/2) beta += 0.05f;
-            beta = min((M_PI/2)-0.05f,beta);
+            if(beta<(float)M_PI/2) beta += 0.03f;
+            beta = min((M_PI/2)-0.03f,beta);
             px = radius * cos(beta)*sin(alpha);
             pz = radius * cos(beta)*cos(alpha);
             py = radius * sin(beta);
             glutPostRedisplay();
             break;
         case 's':
-            if(beta>=-(float)M_PI/2) beta -= 0.05f;
-            beta = max((-M_PI/2)+0.05f,beta);
+            if(beta>=-(float)M_PI/2) beta -= 0.03f;
+            beta = max((-M_PI/2)+0.03f,beta);
             px = radius * cos(beta)*sin(alpha);
             pz = radius * cos(beta)*cos(alpha);
             py = radius * sin(beta);
             glutPostRedisplay();
             break;
         case 'a':
-            alpha += 0.05f;
+            alpha += 0.03f;
             px = radius * cos(beta)*sin(alpha);
             pz = radius * cos(beta)*cos(alpha);
             py = radius * sin(beta);
             glutPostRedisplay();
             break;
         case 'd':
-            alpha -= 0.05f;
+            alpha -= 0.03f;
             px = radius * cos(beta)*sin(alpha);
             pz = radius * cos(beta)*cos(alpha);
             py = radius * sin(beta);
@@ -373,6 +387,7 @@ void processKeyboard(unsigned char key,int x,int y){
     }
 }
 
+
 void imprimeAjuda (){
     cout<< "+---------------------------------------------------------------------+" <<endl;
     cout<< "|                                                                     |" <<endl;
@@ -397,9 +412,9 @@ void imprimeAjuda (){
     cout<< "|   Roda a câmera para baixo                                          |" <<endl;
     cout<< "|                                                                     |" <<endl;
     cout<< "|  Comandos (Zoom):                                                   |" <<endl;
-    cout<< "|- UP_ARROW_KEY:                                                      |" <<endl;
+    cout<< "|- Mouse Wheel up:                                                    |" <<endl;
     cout<< "|       Zoom in                                                       |" <<endl;
-    cout<< "|- Down_ARROW_KEY:                                                    |" <<endl;
+    cout<< "|- Mouse Wheel down:                                                  |" <<endl;
     cout<< "|       Zoom out                                                      |" <<endl;
     cout<< "|                                                                     |" <<endl;
     cout<< "| Comandos (Formatar):                                                |" <<endl;
@@ -440,23 +455,23 @@ int main(int argc, char **argv) {
 	glutInitWindowPosition(100,100);
 	glutInitWindowSize(800,800);
 	glutCreateWindow("CG@DI-UM");
-		
-// Required callback registry 
+
+// Required callback registry
 	glutDisplayFunc(renderScene);
 	glutReshapeFunc(changeSize);
 
-	
+
 // put here the registration of the keyboard callbacks
 
     glutKeyboardFunc(processKeyboard);
-    glutSpecialFunc(processSpecialKeyboard);
+    glutMouseFunc(processMouseWhell);
 
 //  OpenGL settings
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
-	
+
 // enter GLUT's main cycle
 	glutMainLoop();
-	
+
 	return 1;
 }

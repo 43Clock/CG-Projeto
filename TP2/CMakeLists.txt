@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.5)
 project(engine)
 add_executable(${PROJECT_NAME} Structs/Ponto.cpp Structs/Ponto.h Structs/Forma.cpp Structs/Forma.h Engine/main.cpp Engine/tinyxml2.cpp Engine/tinyxml2.h Structs/Grupo.cpp Structs/Grupo.h Structs/Transformacao.cpp Structs/Transformacao.h)
 project(generator)
-add_executable(${PROJECT_NAME} Generator/generator.cpp Structs/Ponto.cpp Structs/Ponto.h Structs/Forma.cpp Structs/Forma.h Generator/plane.cpp Generator/plane.h Generator/box.cpp Generator/box.h Generator/cone.cpp Generator/cone.h Generator/sphere.cpp Generator/sphere.h )
+add_executable(${PROJECT_NAME} Generator/generator.cpp Structs/Ponto.cpp Structs/Ponto.h Structs/Forma.cpp Structs/Forma.h Generator/plane.cpp Generator/plane.h Generator/box.cpp Generator/box.h Generator/cone.cpp Generator/cone.h Generator/sphere.cpp Generator/sphere.h Generator/torus.cpp Generator/torus.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS})

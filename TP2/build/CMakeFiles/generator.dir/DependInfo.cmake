@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/clock/Aulas/CG/Projeto/TP2/Generator/generator.cpp" "/home/clock/Aulas/CG/Projeto/TP2/build/CMakeFiles/generator.dir/Generator/generator.cpp.o"
   "/home/clock/Aulas/CG/Projeto/TP2/Generator/plane.cpp" "/home/clock/Aulas/CG/Projeto/TP2/build/CMakeFiles/generator.dir/Generator/plane.cpp.o"
   "/home/clock/Aulas/CG/Projeto/TP2/Generator/sphere.cpp" "/home/clock/Aulas/CG/Projeto/TP2/build/CMakeFiles/generator.dir/Generator/sphere.cpp.o"
+  "/home/clock/Aulas/CG/Projeto/TP2/Generator/torus.cpp" "/home/clock/Aulas/CG/Projeto/TP2/build/CMakeFiles/generator.dir/Generator/torus.cpp.o"
   "/home/clock/Aulas/CG/Projeto/TP2/Structs/Forma.cpp" "/home/clock/Aulas/CG/Projeto/TP2/build/CMakeFiles/generator.dir/Structs/Forma.cpp.o"
   "/home/clock/Aulas/CG/Projeto/TP2/Structs/Ponto.cpp" "/home/clock/Aulas/CG/Projeto/TP2/build/CMakeFiles/generator.dir/Structs/Ponto.cpp.o"
   )

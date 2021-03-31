@@ -162,6 +162,12 @@
 		<Unit filename="/home/clock/Aulas/CG/Projeto/TP2/Generator/sphere.h">
 			<Option target="generator"/>
 		</Unit>
+		<Unit filename="/home/clock/Aulas/CG/Projeto/TP2/Generator/torus.cpp">
+			<Option target="generator"/>
+		</Unit>
+		<Unit filename="/home/clock/Aulas/CG/Projeto/TP2/Generator/torus.h">
+			<Option target="generator"/>
+		</Unit>
 		<Unit filename="/home/clock/Aulas/CG/Projeto/TP2/Structs/Forma.cpp">
 			<Option target="generator"/>
 			<Option target="engine"/>

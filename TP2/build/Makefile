@@ -345,6 +345,33 @@ Generator/sphere.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/sphere.cpp.s
 .PHONY : Generator/sphere.cpp.s
 
+Generator/torus.o: Generator/torus.cpp.o
+
+.PHONY : Generator/torus.o
+
+# target to build an object file
+Generator/torus.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/torus.cpp.o
+.PHONY : Generator/torus.cpp.o
+
+Generator/torus.i: Generator/torus.cpp.i
+
+.PHONY : Generator/torus.i
+
+# target to preprocess a source file
+Generator/torus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/torus.cpp.i
+.PHONY : Generator/torus.cpp.i
+
+Generator/torus.s: Generator/torus.cpp.s
+
+.PHONY : Generator/torus.s
+
+# target to generate assembly for a file
+Generator/torus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/torus.cpp.s
+.PHONY : Generator/torus.cpp.s
+
 Structs/Forma.o: Structs/Forma.cpp.o
 
 .PHONY : Structs/Forma.o
@@ -490,6 +517,9 @@ help:
 	@echo "... Generator/sphere.o"
 	@echo "... Generator/sphere.i"
 	@echo "... Generator/sphere.s"
+	@echo "... Generator/torus.o"
+	@echo "... Generator/torus.i"
+	@echo "... Generator/torus.s"
 	@echo "... Structs/Forma.o"
 	@echo "... Structs/Forma.i"
 	@echo "... Structs/Forma.s"

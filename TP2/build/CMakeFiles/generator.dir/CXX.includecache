@@ -6,3 +6,21 @@
 
 #IncludeRegexTransform: 
 
+/home/clock/Aulas/CG/Projeto/TP2/Generator/torus.cpp
+torus.h
+/home/clock/Aulas/CG/Projeto/TP2/Generator/torus.h
+
+/home/clock/Aulas/CG/Projeto/TP2/Generator/torus.h
+../Structs/Forma.h
+/home/clock/Aulas/CG/Projeto/TP2/Structs/Forma.h
+math.h
+-
+
+/home/clock/Aulas/CG/Projeto/TP2/Structs/Forma.h
+vector
+-
+Ponto.h
+/home/clock/Aulas/CG/Projeto/TP2/Structs/Ponto.h
+
+/home/clock/Aulas/CG/Projeto/TP2/Structs/Ponto.h
+
