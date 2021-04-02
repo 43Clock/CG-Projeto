@@ -71,6 +71,25 @@
             <models>
                 <model file="../3dObjects/planet.3d" />
             </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
         </group>
         <group>
             <color R = "60" G = "60" B = "60"/>
@@ -93,6 +112,25 @@
             <models>
                 <model file="../3dObjects/planet.3d" />
             </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
         </group>
         <group>
             <color R = "60" G = "60" B = "60"/>
@@ -116,6 +154,25 @@
                     <model file="../3dObjects/anel.3d" />
                 </models>
             </group>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
         </group>
         <group>
             <color R = "60" G = "60" B = "60"/>
@@ -132,6 +189,31 @@
             <models>
                 <model file="../3dObjects/planet.3d" />
             </models>
+            <group>
+                <rotate angle="80" axisX="1"/>
+                <models>
+                    <model file = "../3dObjects/ring.3d"/>
+                </models>
+            </group>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
         </group>
         <group>
             <color R = "60" G = "60" B = "60"/>
@@ -148,6 +230,25 @@
             <models>
                 <model file="../3dObjects/planet.3d" />
             </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
         </group>
         <group>
             <color R = "60" G = "60" B = "60"/>
@@ -164,6 +265,25 @@
             <models>
                 <model file="../3dObjects/planet.3d" />
             </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
         </group>
         <group>
             <color R = "60" G = "60" B = "60"/>
@@ -172,5 +292,6 @@
                 <model file = "../3dObjects/orbita.3d"/>
             </models>
         </group>
+
     </group>
 </scene>

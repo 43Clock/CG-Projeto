@@ -21,6 +21,9 @@ float radius = 400.0f;
 float px = radius * cos(beta)*sin(alpha);
 float pz = radius * cos(beta)*cos(alpha);
 float py = radius * sin(beta);
+float dx = 0.0f;
+float dz = 0.0f;
+
 float color = 0.0f;
 GLenum type = GL_FILL;
 int colorChange = 0;
@@ -261,11 +264,11 @@ void renderScene(void) {
 	// set the camera
 	glLoadIdentity();
 	gluLookAt(px,py,pz,
-		      0.0,0.0,0.0,
+		      dx,0.0,dz,
 			  0.0f,1.0f,0.0f);
 
 // put the geometric transformations here
-    glBegin(GL_LINES);
+    /*glBegin(GL_LINES);
     glColor3f(1.0f,0.0f,0.0f);
     glVertex3f(0.0f,0.0f,0.0f);
     glVertex3f(100.0f,0.0f,0.0f);
@@ -275,7 +278,7 @@ void renderScene(void) {
     glColor3f(0.0f,0.0f,1.0f);
     glVertex3f(0.0f,0.0f,0.0f);
     glVertex3f(0.0f,0.0f,100.0f);
-    glEnd();
+    glEnd();*/
 
     glColor3f(1,1,1);
 
@@ -318,6 +321,24 @@ float min(float a,float b) {
 
 float max(float a,float b) {
     return a>b?a:b;
+}
+
+void processSpecialKeys(int key,int x,int y){
+    switch (key) {
+        case GLUT_KEY_RIGHT:
+            dx += 2.0f;
+            break;
+        case GLUT_KEY_LEFT:
+            dx -= 2.0f;
+            break;
+        case GLUT_KEY_DOWN:
+            dz += 2.0f;
+            break;
+        case GLUT_KEY_UP:
+            dz -= 2.0f;
+            break;
+    }
+    glutPostRedisplay();
 }
 
 void processKeyboard(unsigned char key,int x,int y){
@@ -427,7 +448,7 @@ void imprimeAjuda (){
     cout<< "|                                                                     |" <<endl;
     cout<< "| Comandos (Cores):                                                   |" <<endl;
     cout<< "|- v:                                                                 |" <<endl;
-    cout<< "|   Pintar tudo a branco                                              |" <<endl;
+    cout<< "|   Voltar ao default                                                 |" <<endl;
     cout<< "|- c:                                                                 |" <<endl;
     cout<< "|   Pintar com um gradiente de preto e branco                         |" <<endl;
     cout<< "|- r:                                                                 |" <<endl;
@@ -463,6 +484,7 @@ int main(int argc, char **argv) {
 
 // put here the registration of the keyboard callbacks
 
+    glutSpecialFunc(processSpecialKeys);
     glutKeyboardFunc(processKeyboard);
     glutMouseFunc(processMouseWhell);
 

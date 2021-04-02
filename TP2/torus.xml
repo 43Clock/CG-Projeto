@@ -1,8 +1,0 @@
-<scene>
-    <group>
-        <scale X="32.4" Z = "32.4" />
-        <models>
-            <model file="../3dObjects/test.3d" />
-        </models>
-    </group>
-</scene>
