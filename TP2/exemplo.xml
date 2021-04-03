@@ -1,25 +1,7 @@
 <scene>
     <group>
-        <rotate angle="45" axisX="0" axisY="1" axisZ="0" />
-        <translate X="5" Y="0" />
-        <color R="1.0"/>
         <models>
-            <model file="../3dObjects/sphere.3d" />
-            <model file="../3dObjects/plane.3d" />
-        </models>
-        <group>
-            <translate Y="1" />
-            <color G="1.0"/>
-            <models>
-                <model file="../3dObjects/cone.3d" />
-            </models>
-        </group>
-    </group>
-    <group>
-        <translate Y="5" />
-        <color B="1.0"/>
-        <models>
-            <model file="../3dObjects/box.3d" />
+            <model file="../3dObjects/test.3d" />
         </models>
     </group>
 </scene>

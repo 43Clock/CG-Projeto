@@ -2,8 +2,9 @@
     <group>
         <group>
             <color R = "255" G = "162" />
+            <scale X="30" Y="30" Z="30"/>
             <models>
-                <model file="../3dObjects/sun.3d" />
+                <model file="../3dObjects/planet.3d" />
             </models>
         </group>
         <group> <!-- Mercurio-->

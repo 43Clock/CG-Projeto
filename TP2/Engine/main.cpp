@@ -24,6 +24,10 @@ float py = radius * sin(beta);
 float dx = 0.0f;
 float dz = 0.0f;
 
+int timebase;
+float frames;
+float fps;
+
 float color = 0.0f;
 GLenum type = GL_FILL;
 int colorChange = 0;
@@ -268,17 +272,6 @@ void renderScene(void) {
 			  0.0f,1.0f,0.0f);
 
 // put the geometric transformations here
-    /*glBegin(GL_LINES);
-    glColor3f(1.0f,0.0f,0.0f);
-    glVertex3f(0.0f,0.0f,0.0f);
-    glVertex3f(100.0f,0.0f,0.0f);
-    glColor3f(0.0f,1.0f,0.0f);
-    glVertex3f(0.0f,0.0f,0.0f);
-    glVertex3f(0.0f,100.0f,0.0f);
-    glColor3f(0.0f,0.0f,1.0f);
-    glVertex3f(0.0f,0.0f,0.0f);
-    glVertex3f(0.0f,0.0f,100.0f);
-    glEnd();*/
 
     glColor3f(1,1,1);
 
@@ -287,8 +280,19 @@ void renderScene(void) {
     for(Grupo *g:grupos){
         desenhaGrupo(g);
     }
+    frames++;
+    int time = glutGet(GLUT_ELAPSED_TIME);
+    if (time - timebase>1000){
+        fps = frames*1000.0/(time-timebase);
+        timebase = time;
+        frames = 0;
+    }
+    char title[1024];
+    sprintf(title,"%f FPS",fps);
+    glutSetWindowTitle(title);
 	// End of frame
 	glutSwapBuffers();
+	glutPostRedisplay();
 }
 
 
