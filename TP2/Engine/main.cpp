@@ -497,6 +497,7 @@ int main(int argc, char **argv) {
 	glEnable(GL_CULL_FACE);
 
 // enter GLUT's main cycle
+    timebase = glutGet(GLUT_ELAPSED_TIME);
 	glutMainLoop();
 
 	return 1;
