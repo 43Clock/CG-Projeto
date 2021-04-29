@@ -71,16 +71,17 @@ Forma* bezierPatch(float tess,char *path){
             controls[i].push_back(atof(temp));
         }
     }
-    float u1,v1,u2,v2, inc = 1.0f/tess;
+    file.close();
+    float u1,v1,u2,v2, t = 1.0f / tess;
     Ponto *res[n_patches][4];
 
     for (int i = 0; i < n_patches; ++i) {
         for (int j = 0; j < tess; ++j) {
             for (int k = 0; k < tess; ++k) {
-                u1 = j * inc;
-                v1 = k * inc;
-                u2 = (j+1) * inc;
-                v2 = (k+1) * inc;
+                u1 = j * t;
+                v1 = k * t;
+                u2 = (j+1) * t;
+                v2 = (k+1) * t;
 
                 res[i][0] = calculaBezierPatch(controls,patches[i],u1,v1);
                 res[i][1] = calculaBezierPatch(controls,patches[i],u2,v1);

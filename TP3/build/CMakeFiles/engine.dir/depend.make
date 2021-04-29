@@ -24,6 +24,7 @@ CMakeFiles/engine.dir/Structs/Grupo.cpp.o: ../Structs/Transformacao.h
 CMakeFiles/engine.dir/Structs/Ponto.cpp.o: ../Structs/Ponto.cpp
 CMakeFiles/engine.dir/Structs/Ponto.cpp.o: ../Structs/Ponto.h
 
+CMakeFiles/engine.dir/Structs/Transformacao.cpp.o: ../Structs/Ponto.h
 CMakeFiles/engine.dir/Structs/Transformacao.cpp.o: ../Structs/Transformacao.cpp
 CMakeFiles/engine.dir/Structs/Transformacao.cpp.o: ../Structs/Transformacao.h
 

@@ -1,6 +1,7 @@
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
+#include <GL/glew.h>
 #include <GL/glut.h>
 #endif
 
@@ -30,7 +31,6 @@ float fps;
 
 float color = 0.0f;
 GLenum type = GL_FILL;
-int colorChange = 0;
 
 using namespace tinyxml2;
 using namespace std;
@@ -68,7 +68,8 @@ void processaTranslate(XMLElement *child,Grupo *g){
     const char * xFile = child->Attribute("X");
     const char * yFile = child->Attribute("Y");
     const char * zFile = child->Attribute("Z");
-    float x = 0.0f,y=0.0f,z=0.0f;
+    const char * timeFile = child->Attribute("time");
+    float x = 0.0f,y=0.0f,z=0.0f,time = 0.0f;
     if(xFile){
         x = atof(xFile);
     }
@@ -78,7 +79,19 @@ void processaTranslate(XMLElement *child,Grupo *g){
     if(zFile){
         z = atof(zFile);
     }
-    g->adicionaTransformacao(new Transformacao("translate",x,y,z,0.0f));
+    if (timeFile) {
+        time = atof(timeFile);
+    }
+    XMLElement *childs = child->FirstChildElement();
+    vector<Ponto*> pontos;
+    for (;childs ;childs = childs->NextSiblingElement()) {
+        float x = 0,y = 0,z = 0;
+        childs->QueryFloatAttribute("X",&x);
+        childs->QueryFloatAttribute("Y",&y);
+        childs->QueryFloatAttribute("Z",&z);
+        pontos.push_back(new Ponto(x, y, z));
+    }
+    g->adicionaTransformacao(new Translate("translate",x,y,z,time,pontos));
 }
 
 void processaRotate(XMLElement *child,Grupo *g){
@@ -86,7 +99,8 @@ void processaRotate(XMLElement *child,Grupo *g){
     const char * xFile = child->Attribute("axisX");
     const char * yFile = child->Attribute("axisY");
     const char * zFile = child->Attribute("axisZ");
-    float x = 0.0f,y=0.0f,z=0.0f,angle = 0.0f;
+    const char * timeFile = child->Attribute("time");
+    float x = 0.0f,y=0.0f,z=0.0f,angle = 0.0f,time = 0.0f;
     if(xFile){
         x = atof(xFile);
     }
@@ -96,10 +110,13 @@ void processaRotate(XMLElement *child,Grupo *g){
     if(zFile){
         z = atof(zFile);
     }
-    if(angleFile){
+    if(angleFile && !timeFile){
         angle = atof(angleFile);
     }
-    g->adicionaTransformacao(new Transformacao("rotate",x,y,z,angle));
+    if (timeFile) {
+        time = atof(timeFile);
+    }
+    g->adicionaTransformacao(new Rotate("rotate",x,y,z,angle,time));
 }
 
 void processaScale(XMLElement *child,Grupo *g){
@@ -116,7 +133,7 @@ void processaScale(XMLElement *child,Grupo *g){
     if(zFile){
         z = atof(zFile);
     }
-    g->adicionaTransformacao(new Transformacao("scale",x,y,z,0.0f));
+    g->adicionaTransformacao(new Transformacao("scale",x,y,z));
 }
 
 void processaColor(XMLElement *child,Grupo *g){
@@ -133,7 +150,7 @@ void processaColor(XMLElement *child,Grupo *g){
     if(zFile){
         z = atof(zFile)/255;
     }
-    g->adicionaTransformacao(new Transformacao("color",x,y,z,0.0f));
+    g->adicionaTransformacao(new Transformacao("color",x,y,z));
 }
 
 void processaGroup(XMLElement *x,Grupo *g){
@@ -172,42 +189,11 @@ void desenhaGrupo(Grupo *g) {
     vector<Forma*> fs = g->getFormas();
     glPushMatrix();
     for (Transformacao* t : transform) {
-        if(t->getTipo() =="translate") {
-            glTranslatef(t->getX(), t->getY(), t->getZ());
-        }
-        else if(t->getTipo() == "rotate") {
-            glRotatef(t->getAngle(), t->getX(), t->getY(), t->getZ());
-        }
-        else if(t->getTipo() =="scale") {
-            glScalef(t->getX(), t->getY(), t->getZ());
-        }
-        else if(t->getTipo() == "color"){
-            glColor3f(t->getX(),t->getY(),t->getZ());
-        }
+        t->apply();
     }
     for(Forma *f:fs){
-        vector<Ponto*> pontos = f->getPontos();
-        color = 0.0f;
-        float colorValueChange = (float) 1/(pontos.size()/(float)(3));
-        for (int j = 0; j <pontos.size() ; j+=3) {
-            if (colorChange == 4){
-                glColor3f(color,0,0);
-            }else if(colorChange == 3){
-                glColor3f(0,color,0);
-            }
-            else if (colorChange == 2){
-                glColor3f(0,0,color);
-            }
-            else if(colorChange==1){
-                glColor3f(color,color,color);
-            }
-            color+=colorValueChange;
-            glBegin(GL_TRIANGLES);
-            glVertex3f(pontos[j]->getX(),pontos[j]->getY(),pontos[j]->getZ());
-            glVertex3f(pontos[j+1]->getX(),pontos[j+1]->getY(),pontos[j+1]->getZ());
-            glVertex3f(pontos[j+2]->getX(),pontos[j+2]->getY(),pontos[j+2]->getZ());
-            glEnd();
-        }
+        f->createVBO();
+        f->draw();
     }
     for(Grupo * gp:gs){
         desenhaGrupo(gp);
@@ -389,26 +375,6 @@ void processKeyboard(unsigned char key,int x,int y){
             type = GL_POINT;
             glutPostRedisplay();
             break;
-        case 'c':
-            colorChange = 1;
-            glutPostRedisplay();
-            break;
-        case 'v':
-            colorChange = 0;
-            glutPostRedisplay();
-            break;
-        case 'r':
-            colorChange = 4;
-            glutPostRedisplay();
-            break;
-        case 'g':
-            colorChange = 3;
-            glutPostRedisplay();
-            break;
-        case 'b':
-            colorChange = 2;
-            glutPostRedisplay();
-            break;
     }
 }
 
@@ -480,6 +446,7 @@ int main(int argc, char **argv) {
 	glutInitWindowPosition(100,100);
 	glutInitWindowSize(800,800);
 	glutCreateWindow("CG@DI-UM");
+	glewInit();
 
 // Required callback registry
 	glutDisplayFunc(renderScene);
@@ -495,6 +462,7 @@ int main(int argc, char **argv) {
 //  OpenGL settings
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
+    glEnableClientState(GL_VERTEX_ARRAY);
 
 // enter GLUT's main cycle
     timebase = glutGet(GLUT_ELAPSED_TIME);

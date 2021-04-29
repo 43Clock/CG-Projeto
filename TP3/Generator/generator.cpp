@@ -58,7 +58,7 @@ void geraTorus(char *r, char *R, char *slices, char *stacks,char *path) {
 void geraBezier(char *tess, char *path,char *path2) {
     Forma *f = bezierPatch(atof(tess),path);
     if (f)
-        writeFile(f, path);
+        writeFile(f, path2);
     else cout<<"Ficheiro Inválido"<<endl;
 }
 

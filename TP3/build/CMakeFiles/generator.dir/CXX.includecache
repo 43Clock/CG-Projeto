@@ -61,6 +61,12 @@ math.h
 -
 
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
+GLUT/glut.h
+-
+GL/glew.h
+-
+GL/glut.h
+-
 vector
 -
 Ponto.h

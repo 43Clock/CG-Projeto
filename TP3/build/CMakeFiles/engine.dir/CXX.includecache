@@ -9,6 +9,8 @@
 /home/clock/Aulas/CG/Projeto/TP3/Engine/main.cpp
 GLUT/glut.h
 -
+GL/glew.h
+-
 GL/glut.h
 -
 math.h
@@ -27,20 +29,6 @@ tinyxml2.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Ponto.h
 ../Structs/Grupo.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Grupo.h
-
-/home/clock/Aulas/CG/Projeto/TP3/Engine/tinyxml2.cpp
-tinyxml2.h
-/home/clock/Aulas/CG/Projeto/TP3/Engine/tinyxml2.h
-new
--
-stddef.h
--
-stdarg.h
--
-cstddef
--
-cstdarg
--
 
 /home/clock/Aulas/CG/Projeto/TP3/Engine/tinyxml2.h
 ctype.h
@@ -72,19 +60,17 @@ android/log.h
 assert.h
 -
 
-/home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.cpp
-Forma.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
-
-/home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
+GLUT/glut.h
+-
+GL/glew.h
+-
+GL/glut.h
+-
 vector
 -
 Ponto.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Ponto.h
-
-/home/clock/Aulas/CG/Projeto/TP3/Structs/Grupo.cpp
-Grupo.h
-/home/clock/Aulas/CG/Projeto/TP3/Structs/Grupo.h
 
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Grupo.h
 vector
@@ -94,17 +80,13 @@ Transformacao.h
 Forma.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
 
-/home/clock/Aulas/CG/Projeto/TP3/Structs/Ponto.cpp
-Ponto.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Ponto.h
-
-/home/clock/Aulas/CG/Projeto/TP3/Structs/Ponto.h
-
-/home/clock/Aulas/CG/Projeto/TP3/Structs/Transformacao.cpp
-Transformacao.h
-/home/clock/Aulas/CG/Projeto/TP3/Structs/Transformacao.h
 
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Transformacao.h
 string
 -
+vector
+-
+Ponto.h
+/home/clock/Aulas/CG/Projeto/TP3/Structs/Ponto.h
 
