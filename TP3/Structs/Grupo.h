@@ -16,6 +16,8 @@ class Grupo {
         vector<Transformacao*> transformacoes;
         vector<Forma*> formas;
         vector<Grupo*> grupos;
+        GLuint buffer;
+
     public:
         void adicionaForma(Forma*);
         void adicionaGrupo(Grupo*);
@@ -23,6 +25,10 @@ class Grupo {
         vector<Transformacao*> getTransformacoes();
         vector<Forma*> getFormas();
         vector<Grupo*> getGrupos();
+
+    void createVBO();
+
+    void draw();
 };
 
 

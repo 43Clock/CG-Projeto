@@ -24,10 +24,6 @@ class Forma {
     void inserePonto(Ponto *p);
     vector<Ponto*> getPontos();
 
-    void draw();
-
-    void createVBO();
-
     int getSize();
 };
 

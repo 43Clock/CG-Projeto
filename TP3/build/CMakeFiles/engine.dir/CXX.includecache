@@ -83,6 +83,14 @@ Forma.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Ponto.h
 
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Transformacao.h
+GLUT/glut.h
+-
+GL/glew.h
+-
+GL/glut.h
+-
+math.h
+-
 string
 -
 vector

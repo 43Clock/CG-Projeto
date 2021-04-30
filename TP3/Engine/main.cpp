@@ -29,7 +29,7 @@ int timebase;
 float frames;
 float fps;
 
-float color = 0.0f;
+int startX, startY, tracking = 0;
 GLenum type = GL_FILL;
 
 using namespace tinyxml2;
@@ -91,7 +91,9 @@ void processaTranslate(XMLElement *child,Grupo *g){
         childs->QueryFloatAttribute("Z",&z);
         pontos.push_back(new Ponto(x, y, z));
     }
-    g->adicionaTransformacao(new Translate("translate",x,y,z,time,pontos));
+    Translate *t = new Translate("translate",x,y,z,time,pontos);
+    t->createVBO();
+    g->adicionaTransformacao(t);
 }
 
 void processaRotate(XMLElement *child,Grupo *g){
@@ -181,6 +183,7 @@ void processaGroup(XMLElement *x,Grupo *g){
             processaColor(child,g);
         }
     }
+    g->createVBO();
 }
 
 void desenhaGrupo(Grupo *g) {
@@ -191,10 +194,7 @@ void desenhaGrupo(Grupo *g) {
     for (Transformacao* t : transform) {
         t->apply();
     }
-    for(Forma *f:fs){
-        f->createVBO();
-        f->draw();
-    }
+    g->draw();
     for(Grupo * gp:gs){
         desenhaGrupo(gp);
     }
@@ -253,10 +253,9 @@ void renderScene(void) {
 
 	// set the camera
 	glLoadIdentity();
-	gluLookAt(px,py,pz,
-		      dx,0.0,dz,
-			  0.0f,1.0f,0.0f);
-
+	gluLookAt(px, py, pz,
+              dx, 0.0, dz,
+              0.0f, 1.0f, 0.0f);
 // put the geometric transformations here
 
     glColor3f(1,1,1);
@@ -285,23 +284,29 @@ void renderScene(void) {
 
 // write function to process keyboard events
 
-void processMouseWhell(int button,int state,int x,int y){
-    switch (button) {
-        case 3:
-            radius -= 1.0f;
-            radius = radius>0.1f?radius:0;
-            px = radius * cos(beta)*sin(alpha);
-            pz = radius * cos(beta)*cos(alpha);
-            py = radius * sin(beta);
-            glutPostRedisplay();
-            break;
-        case 4:
-            radius += 1.0f;
-            px = radius * cos(beta)*sin(alpha);
-            pz = radius * cos(beta)*cos(alpha);
-            py = radius * sin(beta);
-            glutPostRedisplay();
-            break;
+void processMouseButton(int button, int state, int xx, int yy){
+    if (state == GLUT_DOWN)  {
+        startX = xx;
+        startY = yy;
+        if (button == GLUT_LEFT_BUTTON)
+            tracking = 1;
+        else if (button == GLUT_RIGHT_BUTTON)
+            tracking = 2;
+        else
+            tracking = 0;
+    }
+    else if (state == GLUT_UP) {
+        if (tracking == 1) {
+            alpha += (xx - startX);
+            beta += (yy - startY);
+        }
+        else if (tracking == 2) {
+
+            radius -= yy - startY;
+            if (radius < 3)
+                radius = 3.0;
+        }
+        tracking = 0;
     }
 }
 
@@ -313,56 +318,8 @@ float max(float a,float b) {
     return a>b?a:b;
 }
 
-void processSpecialKeys(int key,int x,int y){
-    switch (key) {
-        case GLUT_KEY_RIGHT:
-            dx += 2.0f;
-            break;
-        case GLUT_KEY_LEFT:
-            dx -= 2.0f;
-            break;
-        case GLUT_KEY_DOWN:
-            dz += 2.0f;
-            break;
-        case GLUT_KEY_UP:
-            dz -= 2.0f;
-            break;
-    }
-    glutPostRedisplay();
-}
-
 void processKeyboard(unsigned char key,int x,int y){
     switch (key) {
-        case 'w':
-            if(beta<(float)M_PI/2) beta += 0.03f;
-            beta = min((M_PI/2)-0.03f,beta);
-            px = radius * cos(beta)*sin(alpha);
-            pz = radius * cos(beta)*cos(alpha);
-            py = radius * sin(beta);
-            glutPostRedisplay();
-            break;
-        case 's':
-            if(beta>=-(float)M_PI/2) beta -= 0.03f;
-            beta = max((-M_PI/2)+0.03f,beta);
-            px = radius * cos(beta)*sin(alpha);
-            pz = radius * cos(beta)*cos(alpha);
-            py = radius * sin(beta);
-            glutPostRedisplay();
-            break;
-        case 'a':
-            alpha += 0.03f;
-            px = radius * cos(beta)*sin(alpha);
-            pz = radius * cos(beta)*cos(alpha);
-            py = radius * sin(beta);
-            glutPostRedisplay();
-            break;
-        case 'd':
-            alpha -= 0.03f;
-            px = radius * cos(beta)*sin(alpha);
-            pz = radius * cos(beta)*cos(alpha);
-            py = radius * sin(beta);
-            glutPostRedisplay();
-            break;
         case 'i':
             type = GL_FILL;
             glutPostRedisplay();
@@ -378,6 +335,42 @@ void processKeyboard(unsigned char key,int x,int y){
     }
 }
 
+void processMouseMotion(int xx, int yy) {
+
+    int deltaX, deltaY;
+    int alphaAux, betaAux;
+    int rAux;
+
+    if (!tracking)
+        return;
+    deltaX = xx - startX;
+    deltaY = yy - startY;
+    if (tracking == 1) {
+
+
+        alphaAux = alpha + deltaX;
+        betaAux = beta + deltaY;
+
+        if (betaAux > 85.0)
+            betaAux = 85.0;
+        else if (betaAux < -85.0)
+            betaAux = -85.0;
+
+        rAux = radius;
+    }
+    else if (tracking == 2) {
+
+        alphaAux = alpha;
+        betaAux = beta;
+        rAux = radius - deltaY;
+        if (rAux < 3)
+            rAux = 3;
+    }
+    px = rAux * sin(alphaAux * 3.14 / 180.0) * cos(betaAux * 3.14 / 180.0);
+    pz = rAux * cos(alphaAux * 3.14 / 180.0) * cos(betaAux * 3.14 / 180.0);
+    py = rAux * 							     sin(betaAux * 3.14 / 180.0);
+
+}
 
 void imprimeAjuda (){
     cout<< "+---------------------------------------------------------------------+" <<endl;
@@ -439,34 +432,33 @@ int main(int argc, char **argv) {
         return 0;
     }
 
-    readXML(argv[1]);
 // init GLUT and the window
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
-	glutInitWindowPosition(100,100);
-	glutInitWindowSize(800,800);
-	glutCreateWindow("CG@DI-UM");
-	glewInit();
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
+    glutInitWindowPosition(100,100);
+    glutInitWindowSize(800,800);
+    glutCreateWindow("CG@DI-UM");
+    glewInit();
 
 // Required callback registry
-	glutDisplayFunc(renderScene);
-	glutReshapeFunc(changeSize);
+    glutDisplayFunc(renderScene);
+    glutReshapeFunc(changeSize);
 
 
 // put here the registration of the keyboard callbacks
-
-    glutSpecialFunc(processSpecialKeys);
     glutKeyboardFunc(processKeyboard);
-    glutMouseFunc(processMouseWhell);
+    glutMouseFunc(processMouseButton);
+    glutMotionFunc(processMouseMotion);
 
 //  OpenGL settings
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_CULL_FACE);
     glEnableClientState(GL_VERTEX_ARRAY);
 
 // enter GLUT's main cycle
+    readXML(argv[1]);
     timebase = glutGet(GLUT_ELAPSED_TIME);
-	glutMainLoop();
+    glutMainLoop();
 
-	return 1;
+    return 1;
 }

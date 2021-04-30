@@ -1,14 +1,7 @@
 //
 // Created by clock on 29/03/21.
 //
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#else
-#include <GL/glew.h>
-#include <GL/glut.h>
-#endif
-#define _USE_MATH_DEFINES
-#include <math.h>
+
 #include "Transformacao.h"
 
 Transformacao::Transformacao(const string& s, float x, float y, float z) {
@@ -34,6 +27,23 @@ Translate::Translate(const string &s, float x, float y, float z, float time,vect
     this->z = z;
     this->time = time;
     this->pontos = pontos;
+    if(this->time != 0) {
+        this->curvePoints = createCurvePoints();
+    }
+}
+
+void Translate::createVBO(){
+    if(this->time != 0) {
+        vector<float> pts;
+        for (Ponto *p :this->curvePoints) {
+            pts.push_back(p->getX());
+            pts.push_back(p->getY());
+            pts.push_back(p->getZ());
+        }
+        glGenBuffers(1, &buffer);
+        glBindBuffer(GL_ARRAY_BUFFER, buffer);
+        glBufferData(GL_ARRAY_BUFFER,pts.size()*sizeof(float),pts.data(),GL_STATIC_DRAW);
+    }
 }
 
 const string &Transformacao::getTipo() const {
@@ -194,7 +204,7 @@ vector<Ponto*> Translate::createCurvePoints(){
     float pos[3], deriv[3];
     float t = 0;
     vector<Ponto*> curvePoints;
-    while (t<0) {
+    while (t<1) {
         getGlobalCatmullRomPoint(t, pos, deriv,this->pontos);
         Ponto *p = new Ponto(pos[0], pos[1], pos[2]);
         curvePoints.push_back(p);
@@ -218,14 +228,10 @@ void rotateCurve(float *deriv, float *y){
     glMultMatrixf((float*)m);
 }
 
-void renderCatmullRomCurve(vector<Ponto *> pts){
-    int numPontos = pts.size();
-    glBegin(GL_LINE_LOOP);
-    glColor3f(0.234375f, 0.234375f, 0.234375f);
-    for (int i = 0; i < numPontos; ++i) {
-        glVertex3f(pts[i]->getX(),pts[i]->getY(),pts[i]->getZ());
-    }
-    glEnd();
+void Translate::renderCatmullRomCurve(){
+    glBindBuffer(GL_ARRAY_BUFFER, this->buffer);
+    glVertexPointer(3, GL_FLOAT, 0, nullptr);
+    glDrawArrays(GL_LINE_LOOP, 0, this->curvePoints.size());
 }
 
 void Translate::apply() {
@@ -239,8 +245,7 @@ void Translate::apply() {
         zero[1] = 1;
         zero[2] = 0;
 
-        vector<Ponto*> pts = createCurvePoints();
-        renderCatmullRomCurve(pts);
+        renderCatmullRomCurve();
 
         getGlobalCatmullRomPoint(gt, pos, deriv, this->pontos);
         glTranslatef(pos[0], pos[1], pos[2]);

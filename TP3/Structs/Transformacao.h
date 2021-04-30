@@ -4,7 +4,14 @@
 
 #ifndef GENERATOR_TRANSFORMACAO_H
 #define GENERATOR_TRANSFORMACAO_H
-
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/glew.h>
+#include <GL/glut.h>
+#endif
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include <string>
 #include <vector>
 #include "Ponto.h"
@@ -45,7 +52,8 @@ class Translate : public Transformacao {
     private:
         float time;
         vector<Ponto*> pontos;
-        //vector<Ponto*> curvePoints;
+        vector<Ponto*> curvePoints;
+        GLuint buffer;
     public:
         Translate(const string& s, float x, float y, float z,float time,vector<Ponto*>);
         float getTime();
@@ -53,6 +61,10 @@ class Translate : public Transformacao {
 
 
     vector<Ponto *> createCurvePoints();
+
+    void renderCatmullRomCurve();
+
+    void createVBO();
 };
 
 
