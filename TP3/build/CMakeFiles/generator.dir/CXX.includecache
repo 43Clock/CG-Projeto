@@ -6,13 +6,31 @@
 
 #IncludeRegexTransform: 
 
+/home/clock/Aulas/CG/Projeto/TP3/Generator/bezier.cpp
+fstream
+-
+sstream
+-
+cstring
+-
+bezier.h
+/home/clock/Aulas/CG/Projeto/TP3/Generator/bezier.h
+
 /home/clock/Aulas/CG/Projeto/TP3/Generator/bezier.h
 ../Structs/Forma.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
 
+/home/clock/Aulas/CG/Projeto/TP3/Generator/box.cpp
+box.h
+/home/clock/Aulas/CG/Projeto/TP3/Generator/box.h
+
 /home/clock/Aulas/CG/Projeto/TP3/Generator/box.h
 ../Structs/Forma.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
+
+/home/clock/Aulas/CG/Projeto/TP3/Generator/cone.cpp
+cone.h
+/home/clock/Aulas/CG/Projeto/TP3/Generator/cone.h
 
 /home/clock/Aulas/CG/Projeto/TP3/Generator/cone.h
 ../Structs/Forma.h
@@ -44,9 +62,17 @@ torus.h
 bezier.h
 /home/clock/Aulas/CG/Projeto/TP3/Generator/bezier.h
 
+/home/clock/Aulas/CG/Projeto/TP3/Generator/plane.cpp
+plane.h
+/home/clock/Aulas/CG/Projeto/TP3/Generator/plane.h
+
 /home/clock/Aulas/CG/Projeto/TP3/Generator/plane.h
 ../Structs/Forma.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
+
+/home/clock/Aulas/CG/Projeto/TP3/Generator/sphere.cpp
+sphere.h
+/home/clock/Aulas/CG/Projeto/TP3/Generator/sphere.h
 
 /home/clock/Aulas/CG/Projeto/TP3/Generator/sphere.h
 ../Structs/Forma.h
@@ -54,11 +80,19 @@ bezier.h
 math.h
 -
 
+/home/clock/Aulas/CG/Projeto/TP3/Generator/torus.cpp
+torus.h
+/home/clock/Aulas/CG/Projeto/TP3/Generator/torus.h
+
 /home/clock/Aulas/CG/Projeto/TP3/Generator/torus.h
 ../Structs/Forma.h
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
 math.h
 -
+
+/home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.cpp
+Forma.h
+/home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
 
 /home/clock/Aulas/CG/Projeto/TP3/Structs/Forma.h
 GLUT/glut.h

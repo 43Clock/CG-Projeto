@@ -282,9 +282,12 @@ void renderScene(void) {
 
 
 
-// write function to process keyboard events
-
+void controlAngles(){
+    if (beta>90.0f) beta = 90.0f;
+    if (beta<-90.0f) beta = -90.0f;
+}
 void processMouseButton(int button, int state, int xx, int yy){
+    cout<<beta<<endl;
     if (state == GLUT_DOWN)  {
         startX = xx;
         startY = yy;
@@ -299,6 +302,7 @@ void processMouseButton(int button, int state, int xx, int yy){
         if (tracking == 1) {
             alpha += (xx - startX);
             beta += (yy - startY);
+            controlAngles();
         }
         else if (tracking == 2) {
 
