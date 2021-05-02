@@ -24,12 +24,13 @@ float pz = radius * cos(beta)*cos(alpha);
 float py = radius * sin(beta);
 float dx = 0.0f;
 float dz = 0.0f;
+float lx = 0.0f,lz = 0.0f,cam_angle = 0,px_fps = 0.0f,pz_fps = 0.0f,speed = 5.0f;
 
 int timebase;
 float frames;
 float fps;
 
-int startX, startY, tracking = 0;
+int startX, startY, tracking = 0,fps_mode = 0;
 GLenum type = GL_FILL;
 
 using namespace tinyxml2;
@@ -253,9 +254,19 @@ void renderScene(void) {
 
 	// set the camera
 	glLoadIdentity();
-	gluLookAt(px, py, pz,
-              dx, 0.0, dz,
-              0.0f, 1.0f, 0.0f);
+
+	if(fps_mode == 0) {
+        gluLookAt(px, py, pz,
+                  dx, 0.0, dz,
+                  0.0f, 1.0f, 0.0f);
+    }
+	else {
+	    lx = px_fps+sin(cam_angle);
+        lz = pz_fps+cos(cam_angle);
+        gluLookAt(px_fps,10.0f,pz_fps,
+                  lx,10.0f,lz,
+                  0.0f,1.0f,0.0f);
+	}
 // put the geometric transformations here
 
     glColor3f(1,1,1);
@@ -322,6 +333,8 @@ float max(float a,float b) {
 }
 
 void processKeyboard(unsigned char key,int x,int y){
+    float dx,dy = 0,dz,rx,ry,rz;
+    float upx = 0, upy = 1, upz = 0;
     switch (key) {
         case 'i':
             type = GL_FILL;
@@ -334,6 +347,47 @@ void processKeyboard(unsigned char key,int x,int y){
         case 'p':
             type = GL_POINT;
             glutPostRedisplay();
+            break;
+        case 'f':
+            fps_mode = abs(fps_mode - 1);
+            if(fps_mode == 0) glutSetCursor(0);
+            else {
+                glutSetCursor(GLUT_CURSOR_NONE);
+            }
+            break;
+        case 'e':
+            cam_angle -= 0.1f;
+            break;
+        case 'q':
+            cam_angle+= 0.1f;
+            break;
+        case 'w':
+            dx = lx - px_fps;
+            dz = lz - pz_fps;
+            px_fps = px_fps + speed*dx;
+            pz_fps = pz_fps + speed*dz;
+            break;
+        case 's':
+            dx = lx - px_fps;
+            dz = lz - pz_fps;
+            px_fps = px_fps + (-speed)*dx;
+            pz_fps = pz_fps + (-speed)*dz;
+            break;
+        case 'a':
+            dx = lx - px_fps;
+            dz = lz - pz_fps;
+            rx = dy*upz - dz*upy;
+            rz = dx*upy - dy*upx;
+            px_fps = px_fps + (-speed)*rx;
+            pz_fps = pz_fps + (-speed)*rz;
+            break;
+        case 'd':
+            dx = lx - px_fps;
+            dz = lz - pz_fps;
+            rx = dy*upz - dz*upy;
+            rz = dx*upy - dy*upx;
+            px_fps = px_fps + speed*rx;
+            pz_fps = pz_fps + speed*rz;
             break;
     }
 }
