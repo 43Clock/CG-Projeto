@@ -287,7 +287,6 @@ void controlAngles(){
     if (beta<-90.0f) beta = -90.0f;
 }
 void processMouseButton(int button, int state, int xx, int yy){
-    cout<<beta<<endl;
     if (state == GLUT_DOWN)  {
         startX = xx;
         startY = yy;
