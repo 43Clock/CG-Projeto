@@ -1,0 +1,328 @@
+<scene>
+    <lights>
+        <light type = "POINT" posX = "0" posY = "0" posZ = "0"/>
+    </lights>
+    <group>
+        <group>
+            <scale X="30" Y="30" Z="30"/>
+            <models>
+                <model file="../3dObjects/planet.3d" texture="2k_sun.jpg" emissR="1" emissG="1" emissB="1"  />
+            </models>
+        </group>
+        <group> <!-- Mercurio-->
+            <rotate time = "2.408" angle = "0" axisY = "1"/>
+            <translate X = "50"/>
+            <scale X = "0.76" Y = "0.76" Z = "0.76"/>
+
+            <models>
+                <model file="../3dObjects/planet.3d" texture="2k_mercury.jpg" />
+            </models>
+        </group>
+        <group>
+
+            <scale X ="5" Z = "5"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d" />
+            </models>
+        </group>
+        <group><!-- Venus-->
+            <rotate time = "6.152" angle = "10" axisY = "1"/>
+            <translate X = "60" />
+            <scale X = "1.9" Y = "1.9" Z = "1.9"/>
+
+            <models>
+                <model file="../3dObjects/planet.3d" texture="2k_venus_surface.jpg" />
+            </models>
+        </group>
+        <group>
+
+            <scale X ="6" Z = "6"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d" />
+            </models>
+        </group>
+        <group><!-- Terra-->
+            <rotate time = "10" angle = "-20" axisY = "1"/>
+            <translate X = "70"/>
+            <scale X = "2" Y = "2" Z = "2"/>
+
+            <models>
+                <model file="../3dObjects/planet.3d" texture="2k_earth_daymap.jpg" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_moon.jpg" />
+                </models>
+            </group>
+        </group>
+        <group>
+            <scale X ="7" Z = "7"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d" />
+            </models>
+        </group>
+        <group><!-- Marte-->
+            <rotate time = "18.8" angle = "-90" axisY = "1"/>
+            <translate X = "80"/>
+            <scale X = "1.06" Y = "1.06" Z = "1.06"/>
+            <models>
+                <model file="../3dObjects/planet.3d" texture="2k_mars.jpg" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg" />
+                </models>
+            </group>
+        </group>
+        <group>
+            <scale X ="8" Z = "8"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d" />
+            </models>
+        </group>
+        <group>
+            <models>
+                <model file="../3dObjects/cintura.3d" diffR="1" diffG="0" diffB="0" />
+            </models>
+        </group>
+        <group><!-- Jupiter-->
+            <rotate time = "118.6" angle = "-70" axisY = "1"/>
+            <translate X = "130"/>
+            <scale X = "11.2" Y = "11.2" Z = "11.2"/>
+
+            <models>
+                <model file="../3dObjects/planet.3d" texture="2k_jupiter.jpg" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+        </group>
+        <group>
+
+            <scale X ="13" Z = "13"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d" />
+            </models>
+        </group>
+        <group><!-- Saturno-->
+            <rotate time = "294.6" angle = "-100" axisY = "1"/>
+            <translate X = "160"/>
+            <scale X = "9.2" Y = "9.2" Z = "9.2"/>
+
+            <models>
+                <model file="../3dObjects/planet.3d" texture="2k_saturn.jpg" />
+            </models>
+            <group>
+                <rotate angle="20" axisX="1"/>
+
+                <models>
+                    <model file="../3dObjects/anel.3d" texture="2k_saturn_ring_alpha.png" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+        </group>
+        <group>
+
+            <scale X ="16" Z = "16"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"  />
+            </models>
+        </group>
+        <group><!-- Urano-->
+            <rotate time = "840.1" angle = "-40" axisY = "1"/>
+            <translate X = "190"/>
+            <scale X = "3.7" Y = "3.7" Z = "3.7"/>
+
+            <models>
+                <model file="../3dObjects/planet.3d" texture="2k_uranus.jpg" />
+            </models>
+            <group>
+                <rotate angle="80" axisX="1"/>
+                <models>
+                    <model file = "../3dObjects/ring.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+        </group>
+        <group>
+
+            <scale X ="19" Z = "19"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d" />
+            </models>
+        </group>
+        <group><!-- Neptuno-->
+            <rotate time = "1647.9" angle = "-10" axisY = "1"/>
+            <translate X = "220"/>
+            <scale X = "3.59" Y = "3.59" Z = "3.59"/>
+
+            <models>
+                <model file="../3dObjects/planet.3d" texture="2k_neptune.jpg" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <rotate time= "10" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+        </group>
+        <group>
+
+            <scale X ="22" Z = "22"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d" />
+            </models>
+        </group>
+        <group><!-- Plutao-->
+            <rotate time = "2485.9" angle = "-45" axisY = "1"/>
+            <translate X = "250"/>
+            <scale X = "0.34" Y = "0.34" Z = "0.34"/>
+
+            <models>
+                <model file="../3dObjects/planet.3d" texture="plutomap1k.jpg" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" texture="2k_ceres_fictional.jpg"/>
+                </models>
+            </group>
+        </group>
+        <group>
+
+            <scale X ="25" Z = "25"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d" />
+            </models>
+        </group>
+        <group>
+            <rotate angle="30" axisX="1" axisY="0" axisZ="1"/>
+            <translate time = "10">
+                <point X = "200" Y = "0" Z="0"/>
+                <point X = "150" Y = "0" Z="-66.144"/>
+                <point X = "100" Y = "0" Z="-86.603"/>
+                <point X = "50" Y = "0" Z="-96.825"/>
+                <point X = "0" Y = "0" Z="-100"/>
+                <point X = "-50" Y = "0" Z="-96.825"/>
+                <point X = "-100" Y = "0" Z="-86.603"/>
+                <point X = "-150" Y = "0" Z="-66.144"/>
+                <point X = "-200" Y = "0" Z="0"/>
+                <point X = "-150" Y = "0" Z="66.144"/>
+                <point X = "-100" Y = "0" Z="86.603"/>
+                <point X = "-50" Y = "0" Z="96.825"/>
+                <point X = "0" Y = "0" Z="100"/>
+                <point X = "50" Y = "0" Z="96.825"/>
+                <point X = "100" Y = "0" Z="86.603"/>
+                <point X = "150" Y = "0" Z="66.144"/>
+            </translate>
+            <models>
+                <model file = "../3dObjects/teapot.3d" texture="meteor.jpg" />
+            </models>
+        </group>
+    </group>
+</scene>

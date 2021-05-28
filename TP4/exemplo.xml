@@ -1,0 +1,17 @@
+<scene>
+    <lights>
+        <light type = "POINT" posX = "0" posY = "0" posZ = "0"/>
+    </lights>
+    <group>
+        <translate X = "20"/>
+        <models>
+            <model file="../3dObjects/planet.3d" diffR="1" diffG="0" diffB="0   " />
+        </models>
+    </group>
+    <group>
+        <translate X = "-20"/>
+        <models>
+            <model file="../3dObjects/planet.3d"  />
+        </models>
+    </group>
+</scene>

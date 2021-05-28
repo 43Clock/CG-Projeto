@@ -1,0 +1,298 @@
+<scene>
+    <group>
+        <group>
+            <color R = "255" G = "162" />
+            <scale X="30" Y="30" Z="30"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+        </group>
+        <group> <!-- Mercurio-->
+            <rotate angle = "0" axisY = "1"/>
+            <translate X = "50"/>
+            <scale X = "0.76" Y = "0.76" Z = "0.76"/>
+            <color R = "122" G = "121" B = "120"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+        </group>
+        <group>
+            <color R = "60" G = "60" B = "60"/>
+            <scale X ="5" Z = "5"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"/>
+            </models>
+        </group>
+        <group><!-- Venus-->
+            <rotate angle = "10" axisY = "1"/>
+            <translate X = "60" />
+            <scale X = "1.9" Y = "1.9" Z = "1.9"/>
+            <color R = "196" G = "114" B = "6"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+        </group>
+        <group>
+            <color R = "60" G = "60" B = "60"/>
+            <scale X ="6" Z = "6"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"/>
+            </models>
+        </group>
+        <group><!-- Terra-->
+            <rotate angle = "-20" axisY = "1"/>
+            <translate X = "70"/>
+            <scale X = "2" Y = "2" Z = "2"/>
+            <color R = "0" G = "120" B = "189"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+        </group>
+        <group>
+            <color R = "60" G = "60" B = "60"/>
+            <scale X ="7" Z = "7"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"/>
+            </models>
+        </group>
+        <group><!-- Marte-->
+            <rotate angle = "-90" axisY = "1"/>
+            <translate X = "80"/>
+            <scale X = "1.06" Y = "1.06" Z = "1.06"/>
+            <color R = "209" G = "77" B = "33"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+        </group>
+        <group>
+            <color R = "60" G = "60" B = "60"/>
+            <scale X ="8" Z = "8"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"/>
+            </models>
+        </group>
+        <group> <!-- Cintura-->
+            <color R = "82" G = "65" B = "47"/>
+            <models>
+                <model file="../3dObjects/cintura.3d"/>
+            </models>
+        </group>
+        <group><!-- Jupiter-->
+            <rotate angle = "-70" axisY = "1"/>
+            <translate X = "130"/>
+            <scale X = "11.2" Y = "11.2" Z = "11.2"/>
+            <color R = "255" G = "217" B = "173"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+        </group>
+        <group>
+            <color R = "60" G = "60" B = "60"/>
+            <scale X ="13" Z = "13"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"/>
+            </models>
+        </group>
+        <group><!-- Saturno-->
+            <rotate angle = "-100" axisY = "1"/>
+            <translate X = "160"/>
+            <scale X = "9.2" Y = "9.2" Z = "9.2"/>
+            <color R = "217" G = "178" B = "93"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+            <group>
+                <rotate angle="20" axisX="1"/>
+                <color R = "166" G = "145" B = "86"/>
+                <models>
+                    <model file="../3dObjects/anel.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+        </group>
+        <group>
+            <color R = "60" G = "60" B = "60"/>
+            <scale X ="16" Z = "16"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"/>
+            </models>
+        </group>
+        <group><!-- Urano-->
+            <rotate angle = "-40" axisY = "1"/>
+            <translate X = "190"/>
+            <scale X = "3.7" Y = "3.7" Z = "3.7"/>
+            <color R = "196" G = "241" B = "255"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+            <group>
+                <rotate angle="80" axisX="1"/>
+                <models>
+                    <model file = "../3dObjects/ring.3d"/>
+                </models>
+            </group>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+        </group>
+        <group>
+            <color R = "60" G = "60" B = "60"/>
+            <scale X ="19" Z = "19"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"/>
+            </models>
+        </group>
+        <group><!-- Neptuno-->
+            <rotate angle = "-10" axisY = "1"/>
+            <translate X = "220"/>
+            <scale X = "3.59" Y = "3.59" Z = "3.59"/>
+            <color R = "101" G = "41" B = "255"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+        </group>
+        <group>
+            <color R = "60" G = "60" B = "60"/>
+            <scale X ="22" Z = "22"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"/>
+            </models>
+        </group>
+        <group><!-- Plutao-->
+            <rotate angle = "-45" axisY = "1"/>
+            <translate X = "250"/>
+            <scale X = "0.34" Y = "0.34" Z = "0.34"/>
+            <color R = "191" G = "180" B = "138"/>
+            <models>
+                <model file="../3dObjects/planet.3d" />
+            </models>
+            <group>
+                <rotate angle="40" axisZ="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+            <group>
+                <rotate angle="140" axisZ="1"/>
+                <rotate angle="90" axisY="1"/>
+                <translate X="1.5"/>
+                <color R = "255" G="255" B="255"/>
+                <scale X = "0.2" Y = "0.2" Z = "0.2"/>
+                <models>
+                    <model file="../3dObjects/planet.3d" />
+                </models>
+            </group>
+        </group>
+        <group>
+            <color R = "60" G = "60" B = "60"/>
+            <scale X ="25" Z = "25"/>
+            <models>
+                <model file = "../3dObjects/orbita.3d"/>
+            </models>
+        </group>
+
+    </group>
+</scene>
